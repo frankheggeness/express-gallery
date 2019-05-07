@@ -11,10 +11,6 @@ class Gallery extends bookshelf.Model {
   owner() {
     return this.belongsTo('User');
   }
-
-  // siblings() {
-  //   return this.hasMany('Cars');
-  // }
 }
 
 module.exports = bookshelf.model('Gallery', Gallery);
