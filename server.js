@@ -19,6 +19,7 @@ const galleryRoute = require('./routes/gallery');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 // passport stuff
 app.use(express.static('public'));
 app.use(cookieParser());
@@ -77,21 +78,21 @@ passport.deserializeUser(function(user, done) {
 
 // app.use('/', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }));
 
-app.get('/login', (req, res) => {
-  res.render('./templates/login');
-});
-
-app.get('/', (req, res) => {
-  res.render('./templates/main');
-});
-
-app.use('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }));
+// app.get('/login', (req, res) => {
+//   res.render('./templates/login');
+// });
 
 // app.get('/', (req, res) => {
 //   res.render('./templates/main');
 // });
 
-// app.use('/', homeRoute);
+// app.use('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }));
+
+// app.get('/', (req, res) => {
+//   res.render('./templates/main');
+// });
+
+app.use('/', homeRoute);
 app.use('/gallery', galleryRoute);
 
 const server = app.listen(PORT, () => {

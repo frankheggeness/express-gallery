@@ -1,7 +1,16 @@
 $logo-font: 'IBM Plex Sans', sans-serif;
-$font-color: #7c777d;
+// $font-color: #7c777d;
+$font-color: #87cefa;
 $small-screen: 420px;
+
+// object fit property
+
+a:-webkit-any-link {
+  text-decoration: none !important;
+}
+
 html {
+  height: 100%;
   background-color: white;
   width: 100vw;
   display: flex;
@@ -9,6 +18,7 @@ html {
   align-items: center;
   body {
     width: 75%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -17,10 +27,10 @@ html {
   }
 
   #logo {
-    color: #7c777d;
+    color: $font-color;
   }
   #tagline {
-    color: #7c777d;
+    color: $font-color;
   }
 
   #header {
@@ -33,5 +43,53 @@ html {
     border-top: 1px dotted $font-color;
     padding-top: 10px;
     margin: 1em 0em 4em 0em;
+    #logoBox {
+      width: 75%;
+      font-size: 3.25em;
+      font-weight: 900;
+      letter-spacing: 4px;
+    }
+    #tagBox {
+      width: 25%;
+      font-size: 0.75em;
+      border-left: 1px dotted $font-color;
+      padding: 5px;
+    }
+  }
+
+  #contentContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    #bigContentBox {
+      width: 75%;
+      // background-color: aquamarine;
+      margin: 1em 1em 4em 1em;
+      border: solid 1px;
+      .bigImage {
+        // width: 400px;
+        width: 100%;
+        height: 75%;
+      }
+    }
+    #stackedContentContainer {
+      width: 25%;
+      // background-color: darkviolet;
+      margin: 1em 1em 4em 1em;
+      border: solid 1px;
+      .stackedBox {
+        border: solid 1px;
+        height: 33%;
+        margin-bottom: 2px;
+        .smallPic {
+          width: 100%;
+          height: 75%;
+        }
+        .stackedText {
+          // margin: 1em 1em 4em 1em;
+          margin-bottom: 2px;
+        }
+      }
+    }
   }
 }
