@@ -30,7 +30,7 @@ html {
     color: $font-color;
   }
   #tagline {
-    color: $font-color;
+    color: #4ca4db;
   }
 
   #header {
@@ -54,6 +54,9 @@ html {
       font-size: 0.75em;
       border-left: 1px dotted $font-color;
       padding: 5px;
+      // #tagLine {
+      //   color: black;
+      // }
     }
   }
 
@@ -65,22 +68,29 @@ html {
       width: 75%;
       // background-color: aquamarine;
       margin: 1em 1em 4em 1em;
-      border: solid 1px;
+      // border: solid 1px;
+      #bigTitle {
+        font-family: $logo-font;
+        margin: 0em 0em 0em 0em;
+      }
       .bigImage {
         // width: 400px;
         width: 100%;
-        height: 75%;
+        height: 60%;
       }
     }
     #stackedContentContainer {
       width: 25%;
       // background-color: darkviolet;
       margin: 1em 1em 4em 1em;
-      border: solid 1px;
+      // border: solid 1px;
       .stackedBox {
-        border: solid 1px;
+        // border: solid 1px;
         height: 33%;
         margin-bottom: 2px;
+        .smallTitle {
+          margin: 0em 0em 0em 0em;
+        }
         .smallPic {
           width: 100%;
           height: 75%;

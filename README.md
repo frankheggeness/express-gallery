@@ -1,9 +1,8 @@
-Express Gallery
-===============
+# Express Gallery
 
 Express, Knex.js, Bookshelf.js, HTML5, stored on PostgreSQL
 
-Use the Express, Knex.js, Bookshelf.js, and *almost* any other library or templating engines you want to fulfill the requirements.
+Use the Express, Knex.js, Bookshelf.js, and _almost_ any other library or templating engines you want to fulfill the requirements.
 recommended: Handbars and SASS.
 helpful: Livereload, Gulp for watching compiling SASS
 
@@ -22,7 +21,7 @@ Any user should be able to access these routes:
     - `link` : Text (the image url)
     - `description` : TextArea
 - `POST /gallery` to create a new gallery photo i
-- `GET /gallery/:id/edit` to see a form to *edit* a gallery photo identified by the `:id` param
+- `GET /gallery/:id/edit` to see a form to _edit_ a gallery photo identified by the `:id` param
   - the form fields are:
     - `author` : Text
     - `link` : Text (the image url)
@@ -51,4 +50,3 @@ Once you have finished with all of the requirements outlined above, you are enco
 - Add intergration tests using Mocha and Chai, and end-to-end tests using SuperTest.
 - Create an Admin role, that has elevated privledges. (i.e. Admin can delete users, Admin can edit/delete any post, etc.).
 - Get a code review from an instructor or TA :sparkles:
-
