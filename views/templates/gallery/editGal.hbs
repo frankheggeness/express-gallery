@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spotchek</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  {{>fonts}}
+</head>
+
+<body>
+  {{>header}}
+  <div id="loginBox">
+    <form action="/gallery/{{id}}?_method=PUT">
+      <div class="inputClass">
+        <label>Photo Title:</label>
+        <input type="text" name="title" value={{title}} />
+      </div>
+      <div class="inputClass">
+        <label>Photo Url:</label>
+        <input type="text" name="photo_url" value={{photo_url}} />
+      </div>
+      <div class="inputClass">
+        <label>Photo Description:</label>
+        <input type="text" name="description" value={{description}} />
+      </div>
+      <div class="inputClass">
+        <input type="submit" value="Edit Post" />
+      </div>
+    </form>
+  </div>
+
+
+</body>
+
+</html>

@@ -14,6 +14,28 @@ a {
   color: inherit;
 }
 
+input[type='text'],
+input[type='password'] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid $body-font-color;
+  border-radius: 4px;
+}
+
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
+  background-color: $body-font-color;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 html {
   height: 100%;
   background-color: white;
@@ -49,7 +71,7 @@ html {
 
   #loginButton {
     background-color: white;
-    color: black;
+    color: #4ca4db;
     border: 2px solid $font-color; /* Green */
     font-family: $logo-font;
     // position: absolute;
@@ -97,7 +119,7 @@ html {
         font-family: $logo-font;
         margin: 0em 0em 0em 0em;
       }
-      #bigAuthor {
+      #bigUsername {
         margin: 0em 0em 0em 0em;
         font-family: $logo-font;
       }
@@ -108,6 +130,9 @@ html {
       }
       .bigTextBody {
         font-family: $logo-font;
+      }
+      #editButtonsBox {
+        display: flex;
       }
     }
     #stackedContentContainer {

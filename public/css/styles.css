@@ -4,6 +4,26 @@ a:-webkit-any-link {
 a {
   color: inherit; }
 
+input[type='text'],
+input[type='password'] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #4ca4db;
+  border-radius: 4px; }
+
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
+  background-color: #4ca4db;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer; }
+
 html {
   height: 100%;
   background-color: white;
@@ -33,7 +53,7 @@ html {
     color: #4ca4db; }
   html #loginButton {
     background-color: white;
-    color: black;
+    color: #4ca4db;
     border: 2px solid #87cefa;
     /* Green */
     font-family: "IBM Plex Sans", sans-serif;
@@ -69,7 +89,7 @@ html {
       html #contentContainer #bigContentBox #bigTitle {
         font-family: "IBM Plex Sans", sans-serif;
         margin: 0em 0em 0em 0em; }
-      html #contentContainer #bigContentBox #bigAuthor {
+      html #contentContainer #bigContentBox #bigUsername {
         margin: 0em 0em 0em 0em;
         font-family: "IBM Plex Sans", sans-serif; }
       html #contentContainer #bigContentBox .bigImage {
@@ -77,6 +97,8 @@ html {
         height: 60%; }
       html #contentContainer #bigContentBox .bigTextBody {
         font-family: "IBM Plex Sans", sans-serif; }
+      html #contentContainer #bigContentBox #editButtonsBox {
+        display: flex; }
     html #contentContainer #stackedContentContainer {
       width: 25%;
       margin: 1em 1em 4em 1em; }

@@ -16,16 +16,23 @@
     <div id="bigContentBox">
       <h3 id="bigTitle">{{main.title}}</h3>
       <a href="http://localhost:3000/{{main.users.id}}">
-        <h4 id="bigAuthor">-{{main.users.username}}</h4>
+        <h4 id="bigUsername">-{{main.users.username}}</h4>
       </a>
       <div class="bigPic">
         <img class="bigImage" src={{main.photo_url}}>
       </div>
       <div class="bigTextBody">{{main.description}}</div>
-      <form method="POST" action="/gallery/{{main.id}}?_method=DELETE">
+      <div id="editButtonsBox">
+        <form method="POST" action="/gallery/{{main.id}}?_method=DELETE">
 
-        <input id="deleteButton" type="submit" value="Delete Product">
-      </form>
+          <input id="deleteButton" type="submit" value="Delete Product">
+        </form>
+        <form method="GET" action="/gallery/{{main.id}}/edit">
+
+          <input id="editButton" type="submit" value="Edit Product">
+        </form>
+      </div>
+
     </div>
     <div id="stackedContentContainer">
       <div id="stacked1" class="stackedBox">

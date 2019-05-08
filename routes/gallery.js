@@ -61,6 +61,69 @@ router.delete('/:gallery_id', verify, (req, res) => {
     });
 });
 
+router.get('/:gallery_id/edit', (req, res) => {
+  new Gallery()
+    .where({ id: req.params.gallery_id })
+    .fetch({ withRelated: ['users'] })
+    .then((results) => {
+      let mainGalleryObj = results.toJSON();
+      console.log(results.toJSON());
+      return res.render('./templates/gallery/editGal', mainGalleryObj);
+    });
+});
+
+router.put('/:gallery_id', verify, (req, res) => {
+  const body = req.body;
+  const gallery_id = req.params.gallery_id;
+  Gallery.where({ id: gallery_id })
+    .fetch()
+    .then((gallery) => {
+      if (gallery.attributes.user_id !== req.user.id && req.user.role_id !== 1) {
+        req.flash('error', 'You may not edit photos that are not yours');
+        return res.redirect(`/gallery/${gallery_id}`);
+      }
+      new Gallery({ id: gallery_id })
+        .save(
+          {
+            // user_id: req.user_id,
+            title: body.title,
+            photo_url: body.photo_url,
+            description: body.description,
+          },
+          { patch: true },
+        )
+        .then(() => {
+          console.log('edit done');
+          return res.redirect(`/gallery/${gallery_id}`);
+        });
+    });
+});
+
+// router.put('/:id', isAuthenticated, (req, res) => {
+//   const body = req.body;
+//   const id = req.params.id;
+
+//   Gallery.where({ id: id }).fetch()
+//     .then((photo) => {
+//       if (photo.attributes.user_id !== req.user.id && req.user.role_id !== 1) {
+//         req.flash('error', 'You cannot edit photos that aren\'t yours');
+//         return res.redirect(`/gallery/${id}`);
+//       }
+
+//       new Gallery({ id: id })
+//         .save({
+//           user_id: req.user.id,
+//           title: body.title,
+//           link: body.link,
+//           author: body.author,
+//           description: body.description
+//         }, { patch: true })
+//         .then(() => {
+//           return res.redirect(`/gallery/${photo.id}`);
+//         });
+//     });
+// });
+
 module.exports = router;
 
 // .query((qb) =>{
