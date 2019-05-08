@@ -97,6 +97,19 @@ html {
       font-size: 0.75em;
       border-left: 1px dotted #87cefa;
       padding: 5px; }
+  html #mainPageContainer {
+    display: flex;
+    height: 75%;
+    width: 100%;
+    justify-content: space-around; }
+    html #mainPageContainer #mainLeftBox {
+      width: 50%; }
+    html #mainPageContainer #mainRightBox {
+      width: 50%; }
+      html #mainPageContainer #mainRightBox #mainImage {
+        width: 100%;
+        /* you can use % */
+        height: auto; }
   html #contentContainer {
     display: flex;
     width: 100%;
@@ -106,9 +119,10 @@ html {
       margin: 1em 1em 4em 1em; }
       html #contentContainer #bigContentBox #bigTitle {
         font-family: "IBM Plex Sans", sans-serif;
-        margin: 0em 0em 0em 0em; }
+        margin: 0em 0em 0.5em 0em;
+        color: #4ca4db; }
       html #contentContainer #bigContentBox #bigUsername {
-        margin: 0em 0em 0em 0em;
+        margin: 0.5em 0em 0em 0em;
         font-family: "IBM Plex Sans", sans-serif; }
       html #contentContainer #bigContentBox .bigAuthor {
         margin: 0em 0em 0em 0em;
@@ -117,12 +131,19 @@ html {
         width: 100%;
         height: 60%; }
       html #contentContainer #bigContentBox .bigTextBody {
-        font-family: "IBM Plex Sans", sans-serif; }
+        font-family: "IBM Plex Sans", sans-serif;
+        margin: 1em 1em 4em 1em; }
       html #contentContainer #bigContentBox #editButtonsBox {
         display: flex; }
     html #contentContainer #stackedContentContainer {
       width: 25%;
-      margin: 1em 1em 4em 1em; }
+      margin: 1em 1em 4em 1em;
+      padding: 1em;
+      border-left: 1px dotted #87cefa; }
+      html #contentContainer #stackedContentContainer #stackedText {
+        font-family: "IBM Plex Sans", sans-serif;
+        margin: 0em 0em 0.5em 0em;
+        text-decoration: underline; }
       html #contentContainer #stackedContentContainer .stackedBox {
         height: 33%;
         margin-bottom: 10px; }

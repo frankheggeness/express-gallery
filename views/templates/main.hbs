@@ -12,36 +12,47 @@
 
 <body>
   {{>header}}
-  <div id="contentContainer">
-    <div id="bigContentBox">
-      <h3 id="bigTitle">{{big.title}}</h3>
-      <div class="bigPic">
-        <img class="bigImage" src={{big.photo_url}}>
-      </div>
-      <div class="bigTextBody">{{big.description}}</div>
-    </div>
-    <div id="stackedContentContainer">
-      <div id="stacked1" class="stackedBox">
 
-        <div class="stackedPic">
-          <img class="smallPic" src={{stack1.photo_url}}>
-        </div>
-        <h4 class="smallTitle">{{stack1.title}}</h4>
-      </div>
-      <div id="stacked2" class="stackedBox">
-        <div class="stackedPic">
-          <img class="smallPic" src={{stack2.photo_url}}>
-        </div>
-        <h4 class="smallTitle">{{stack2.title}}</h4>
-      </div>
-      <div id="stacked3" class="stackedBox">
-        <div class="stackedPic">
-          <img class="smallPic" src={{stack3.photo_url}}>
-        </div>
-        <h4 class="smallTitle">{{stack3.title}}</h4>
-      </div>
+  <div id="mainPageContainer">
+
+    <div id="mainLeftBox">
+      <h2 id="greeting">
+        Welcome to SpotChek.<br>
+        this is a line
+      </h2>
+    </div>
+
+    <div id="mainRightBox">
+      <img id="mainImage"
+        src="https://images.ctfassets.net/kl4m5s78bekv/1mmbReS2MxyX6JeRqslAnj/7e77545431792c51c40851608249e8d1/klein_oceanbeach_feb2016_012223.jpg"
+        alt="">
     </div>
   </div>
+
+
+
+
+
 </body>
 
 </html>
+
+{{!-- new
+  <div id="formContainer">
+    <div id="contentContainer">
+      <div id="bigContentBox">
+        <h3 id="bigTitle">{{big.title}}</h3>
+        <div class="bigPic">
+          <img class="bigImage" src={{big.photo_url}}>
+        </div>
+        <div class="bigTextBody">{{big.description}}</div>
+      </div>
+    </div>
+
+  </div>
+  <div id="formBox">
+    <div id="leftBox">
+      <h1 id="leftText">NEW POST</h1>
+      <img id="leftImage" src="" alt="">
+    </div>
+  </div> --}}

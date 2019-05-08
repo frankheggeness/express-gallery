@@ -15,16 +15,19 @@ exports.seed = function(knex, Promise) {
         },
         {
           user_id: 2,
-          title: 'Gallery 2',
-          description: 'This is gallery 2',
-          photo_url: 'https://www.surfholidays.com/assets/images/blog/2015-12-29-Kelly_Slater_Profile_Tube_ride.jpg',
+          title: 'Mexican Point Break Slab',
+          description:
+            'The sandbars were groomed to near-perfection, the south swells were copious, the locals were digging him and the juice was indeed worth the 2,5000-mile squeeze.',
+          photo_url:
+            'https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2019/04/11161145/Vissla_Surfline_Mexico__D4_6387.jpg',
           author: 'AppleMan',
         },
         {
           user_id: 3,
-          title: 'Gallery 3',
-          description: 'This is gallery 3',
-          photo_url: 'https://i.pinimg.com/originals/23/3d/07/233d079fd3dfe3270f1c2f7f3e794b19.jpg',
+          title: 'Lining up the bottom turn',
+          description: `“I showed up and it was fairly good, then with each day, it just got better and better and better. It was a trip. By the end of the trip, the sand was all filled in and it was epic!” Derrick, most likely toward the end of Eric’s stay.`,
+          photo_url:
+            'https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2019/04/11161028/Vissla_Surfline_Mexico__D4_1302-e1556084868300.jpg',
           author: 'OrangeMan',
         },
         {

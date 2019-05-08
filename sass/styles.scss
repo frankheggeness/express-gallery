@@ -52,6 +52,9 @@ html {
     align-items: center;
     margin-top: 4em;
   }
+
+  // form css below
+
   #formContainer {
     display: flex;
     height: 75%;
@@ -77,6 +80,8 @@ html {
       }
     }
   }
+
+  // header below
 
   #logo {
     color: $font-color;
@@ -128,6 +133,27 @@ html {
     }
   }
 
+  // main page below
+
+  #mainPageContainer {
+    display: flex;
+    height: 75%;
+    width: 100%;
+    justify-content: space-around;
+    #mainLeftBox {
+      width: 50%;
+    }
+    #mainRightBox {
+      width: 50%;
+      #mainImage {
+        width: 100%; /* you can use % */
+        height: auto;
+      }
+    }
+  }
+
+  // single gallery below
+
   #contentContainer {
     display: flex;
     width: 100%;
@@ -139,10 +165,11 @@ html {
       // border: solid 1px;
       #bigTitle {
         font-family: $logo-font;
-        margin: 0em 0em 0em 0em;
+        margin: 0em 0em 0.5em 0em;
+        color: $body-font-color;
       }
       #bigUsername {
-        margin: 0em 0em 0em 0em;
+        margin: 0.5em 0em 0em 0em;
         font-family: $logo-font;
       }
       .bigAuthor {
@@ -156,6 +183,7 @@ html {
       }
       .bigTextBody {
         font-family: $logo-font;
+        margin: 1em 1em 4em 1em;
       }
       #editButtonsBox {
         display: flex;
@@ -166,6 +194,13 @@ html {
       // background-color: darkviolet;
       margin: 1em 1em 4em 1em;
       // border: solid 1px;
+      padding: 1em;
+      border-left: 1px dotted $font-color;
+      #stackedText {
+        font-family: $logo-font;
+        margin: 0em 0em 0.5em 0em;
+        text-decoration: underline;
+      }
       .stackedBox {
         // border: solid 1px;
         height: 33%;
