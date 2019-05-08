@@ -8,7 +8,7 @@ class Gallery extends bookshelf.Model {
     return true;
   }
 
-  owner() {
+  users() {
     return this.belongsTo('User');
   }
 }

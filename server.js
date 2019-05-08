@@ -2,6 +2,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const PORT = 3000;
 const verify = require('./middleware/verify');
+const methodOverride = require('method-override');
 
 const User = require('./database/models/User');
 const bodyParser = require('body-parser');
@@ -22,6 +23,7 @@ app.use(bodyParser.json());
 
 // passport stuff
 app.use(express.static('public'));
+app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(session({ secret: 'keyboard cat' }));
 app.use(passport.initialize());
