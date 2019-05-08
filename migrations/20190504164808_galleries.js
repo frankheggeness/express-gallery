@@ -8,6 +8,7 @@ exports.up = function(knex, Promise) {
       .inTable('users')
       .onDelete('CASCADE');
     table.string('title', 600).notNull();
+    table.string('author', 600).notNull();
     table.string('description', 600).notNull();
     table.timestamps(true, true);
   });

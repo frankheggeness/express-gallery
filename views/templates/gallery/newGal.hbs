@@ -12,25 +12,36 @@
 
 <body>
   {{>header}}
-  <div id="loginBox">
-    <form action="/gallery/new" method="post">
-      <div class="inputClass">
-        <label>Photo Title:</label>
-        <input type="text" name="title" />
-      </div>
-      <div class="inputClass">
-        <label>Photo Url:</label>
-        <input type="text" name="photo_url" />
-      </div>
-      <div class="inputClass">
-        <label>Photo Description:</label>
-        <input type="text" name="description" />
-      </div>
-      <div class="inputClass">
-        <input type="submit" value="Create Post" />
-      </div>
-    </form>
+  <div id="formContainer">
+    <div id="leftBox">
+      <h1 id="leftText">NEW POST</h1>
+      <img id="leftImage" src="" alt="">
+    </div>
+    <div id="formBox">
+      <form action="/gallery/new" method="post">
+        <div class="inputClass">
+          <label>Photo Title:</label>
+          <input type="text" name="title" />
+        </div>
+        <div class="inputClass">
+          <label>Photo Url:</label>
+          <input type="text" name="photo_url" />
+        </div>
+        <div class="inputClass">
+          <label>Photo Author:</label>
+          <input type="text" name="author" />
+        </div>
+        <div class="inputClass">
+          <label>Photo Description:</label>
+          <input type="text" name="description" />
+        </div>
+        <div class="inputClass">
+          <input type="submit" value="Create Post" />
+        </div>
+      </form>
+    </div>
   </div>
+
 
 
 </body>

@@ -3,6 +3,7 @@ exports.up = function(knex, Promise) {
     table.increments('id');
     table.string('username', 255).notNull();
     table.string('password', 255).notNull();
+    table.integer('role_id').notNull();
     table.timestamps(true, true);
   });
 };

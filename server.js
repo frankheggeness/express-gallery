@@ -80,10 +80,6 @@ passport.deserializeUser(function(user, done) {
 
 // app.use('/', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }));
 
-// app.get('/login', (req, res) => {
-//   res.render('./templates/login');
-// });
-
 // app.get('/', (req, res) => {
 //   res.render('./templates/main');
 // });

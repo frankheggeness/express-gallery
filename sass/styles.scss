@@ -52,14 +52,30 @@ html {
     align-items: center;
     margin-top: 4em;
   }
-
-  #loginBox {
+  #formContainer {
     display: flex;
-    position: absolute; /* or absolute */
-    top: 25%;
-    left: 50%;
-    right: 50%;
-    font-family: $logo-font;
+    height: 75%;
+    width: 100%;
+    justify-content: space-between;
+    #formBox {
+      display: flex;
+      // position: absolute; /* or absolute */
+      top: 25%;
+      left: 50%;
+      right: 50%;
+      font-family: $logo-font;
+      margin-top: 4em;
+    }
+    #leftBox {
+      #leftText {
+        color: #4ca4db;
+        font-family: $logo-font;
+      }
+      #leftImage {
+        width: 80%; /* you can use % */
+        height: auto;
+      }
+    }
   }
 
   #logo {
@@ -69,7 +85,7 @@ html {
     color: #4ca4db;
   }
 
-  #loginButton {
+  .loginButton {
     background-color: white;
     color: #4ca4db;
     border: 2px solid $font-color; /* Green */
@@ -77,6 +93,12 @@ html {
     // position: absolute;
     float: right;
     margin: 0em 0em 0.5em 0.5em;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+  .loginButton:hover {
+    background-color: #4ca4db; /* Green */
+    color: white;
   }
 
   #header {
@@ -120,6 +142,10 @@ html {
         margin: 0em 0em 0em 0em;
       }
       #bigUsername {
+        margin: 0em 0em 0em 0em;
+        font-family: $logo-font;
+      }
+      .bigAuthor {
         margin: 0em 0em 0em 0em;
         font-family: $logo-font;
       }

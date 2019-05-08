@@ -12,25 +12,36 @@
 
 <body>
   {{>header}}
-  <div id="loginBox">
-    <form action="/gallery/{{id}}?_method=PUT">
-      <div class="inputClass">
-        <label>Photo Title:</label>
-        <input type="text" name="title" value={{title}} />
-      </div>
-      <div class="inputClass">
-        <label>Photo Url:</label>
-        <input type="text" name="photo_url" value={{photo_url}} />
-      </div>
-      <div class="inputClass">
-        <label>Photo Description:</label>
-        <input type="text" name="description" value={{description}} />
-      </div>
-      <div class="inputClass">
-        <input type="submit" value="Edit Post" />
-      </div>
-    </form>
+  <div id="formContainer">
+    <div id="leftBox">
+      <h1 id="leftText">EDIT</h1>
+      <img id="leftImage" src="{{photo_url}}" alt="">
+    </div>
+    <div id="formBox">
+      <form action="/gallery/{{id}}?_method=PUT">
+        <div class="inputClass">
+          <label>Photo Title:</label>
+          <input type="text" name="title" value={{title}} />
+        </div>
+        <div class="inputClass">
+          <label>Photo Url:</label>
+          <input type="text" name="photo_url" value={{photo_url}} />
+        </div>
+        <div class="inputClass">
+          <label>Photo Author:</label>
+          <input type="text" name="author" value={{author}} />
+        </div>
+        <div class="inputClass">
+          <label>Photo Description:</label>
+          <input type="text" name="description" value={{description}} />
+        </div>
+        <div class="inputClass">
+          <input type="submit" value="Edit Post" />
+        </div>
+      </form>
+    </div>
   </div>
+
 
 
 </body>

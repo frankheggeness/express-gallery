@@ -16,11 +16,12 @@
     <div id="bigContentBox">
       <h3 id="bigTitle">{{main.title}}</h3>
       <a href="http://localhost:3000/{{main.users.id}}">
-        <h4 id="bigUsername">-{{main.users.username}}</h4>
+        <h4 id="bigUsername">Submitted by: {{main.users.username}}</h4>
       </a>
       <div class="bigPic">
         <img class="bigImage" src={{main.photo_url}}>
       </div>
+      <div class="bigAuthor">Photograph by: {{main.author}}</div>
       <div class="bigTextBody">{{main.description}}</div>
       <div id="editButtonsBox">
         <form method="POST" action="/gallery/{{main.id}}?_method=DELETE">
