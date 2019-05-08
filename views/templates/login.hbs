@@ -5,27 +5,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>_Architekt</title>
-  <link rel="stylesheet" type="text/css" href="css/styles.css/styles.css">
+  <title>Spotchek</title>
+  <link rel="stylesheet" href="/css/styles.css">
   {{>fonts}}
 </head>
 
 <body>
   {{>header}}
+  <div id="loginBox">
+    <form action="/login" method="post">
+      <div class="inputClass">
+        <label>Username:</label>
+        <input type="text" name="username" />
+      </div>
+      <div class="inputClass">
+        <label>Password:</label>
+        <input type="password" name="password" />
+      </div>
+      <div class="inputClass">
+        <input type="submit" value="Log In" />
+      </div>
+    </form>
+  </div>
 
-  <form action="/login" method="post">
-    <div>
-      <label>Username:</label>
-      <input type="text" name="username" />
-    </div>
-    <div>
-      <label>Password:</label>
-      <input type="password" name="password" />
-    </div>
-    <div>
-      <input type="submit" value="Log In" />
-    </div>
-  </form>
 
 </body>
 

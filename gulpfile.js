@@ -8,6 +8,6 @@ gulp.task('default', function() {
     gulp
       .src('./sass/**/*.scss')
       .pipe(sass().on('error', sass.logError))
-      .pipe(gulp.dest('./public/css/styles.css'));
+      .pipe(gulp.dest('./public/css'));
   });
 });

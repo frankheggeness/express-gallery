@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spotchek</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  {{>fonts}}
+</head>
+
+<body>
+  {{>header}}
+  <div id="contentContainer">
+    <div id="bigContentBox">
+      <h3 id="bigTitle">{{main.title}}</h3>
+      <div class="bigPic">
+        <img class="bigImage" src={{main.photo_url}}>
+      </div>
+      <div class="bigTextBody">{{main.description}}</div>
+    </div>
+    <div id="stackedContentContainer">
+      <div id="stacked1" class="stackedBox">
+
+        <a href='http://localhost:3000/gallery/{{stack1.id}}'>
+          <div class="stackedPic">
+            <img class="smallPic" src={{stack1.photo_url}}>
+          </div>
+          <h4 class="smallTitle">{{stack1.title}}</h4>
+        </a>
+      </div>
+      <div id="stacked2" class="stackedBox">
+        <a href="http://localhost:3000/gallery/{{stack2.id}}">
+          <div class="stackedPic">
+            <img class="smallPic" src={{stack2.photo_url}}>
+          </div>
+          <h4 class="smallTitle">{{stack2.title}}</h4>
+        </a>
+
+      </div>
+      <div id="stacked3" class="stackedBox">
+        <a href="http://localhost:3000/gallery/{{stack3.id}}">
+          <div class="stackedPic">
+            <img class="smallPic" src={{stack3.photo_url}}>
+          </div>
+          <h4 class="smallTitle">{{stack3.title}}</h4>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

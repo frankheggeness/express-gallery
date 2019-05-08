@@ -1,6 +1,9 @@
 a:-webkit-any-link {
   text-decoration: none !important; }
 
+a {
+  color: inherit; }
+
 html {
   height: 100%;
   background-color: white;
@@ -16,10 +19,26 @@ html {
     justify-content: space-between;
     align-items: center;
     margin-top: 4em; }
+  html #loginBox {
+    display: flex;
+    position: absolute;
+    /* or absolute */
+    top: 25%;
+    left: 50%;
+    right: 50%;
+    font-family: "IBM Plex Sans", sans-serif; }
   html #logo {
     color: #87cefa; }
   html #tagline {
     color: #4ca4db; }
+  html #loginButton {
+    background-color: white;
+    color: black;
+    border: 2px solid #87cefa;
+    /* Green */
+    font-family: "IBM Plex Sans", sans-serif;
+    float: right;
+    margin: 0em 0em 0.5em 0.5em; }
   html #header {
     width: 100%;
     height: 6em;
@@ -29,7 +48,7 @@ html {
     font-family: "IBM Plex Sans", sans-serif;
     border-top: 1px dotted #87cefa;
     padding-top: 10px;
-    margin: 1em 0em 4em 0em; }
+    margin: 0.5em 0em 4em 0em; }
     html #header #logoBox {
       width: 75%;
       font-size: 3.25em;
@@ -53,16 +72,20 @@ html {
       html #contentContainer #bigContentBox .bigImage {
         width: 100%;
         height: 60%; }
+      html #contentContainer #bigContentBox .bigTextBody {
+        font-family: "IBM Plex Sans", sans-serif; }
     html #contentContainer #stackedContentContainer {
       width: 25%;
       margin: 1em 1em 4em 1em; }
       html #contentContainer #stackedContentContainer .stackedBox {
         height: 33%;
-        margin-bottom: 2px; }
+        margin-bottom: 10px; }
         html #contentContainer #stackedContentContainer .stackedBox .smallTitle {
-          margin: 0em 0em 0em 0em; }
+          margin: 0em 0em 0em 0em;
+          font-family: "IBM Plex Sans", sans-serif; }
         html #contentContainer #stackedContentContainer .stackedBox .smallPic {
           width: 100%;
           height: 75%; }
         html #contentContainer #stackedContentContainer .stackedBox .stackedText {
-          margin-bottom: 2px; }
+          margin-bottom: 2px;
+          font-family: "IBM Plex Sans", sans-serif; }
