@@ -39,7 +39,7 @@ input[type='reset'] {
 html {
   height: 100%;
   background-color: white;
-  width: 100vw;
+  width: 99vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,6 +60,7 @@ html {
     height: 75%;
     width: 100%;
     justify-content: space-between;
+    margin: 0em 0em 0em 0em;
     #formBox {
       display: flex;
       // position: absolute; /* or absolute */
@@ -68,8 +69,10 @@ html {
       right: 50%;
       font-family: $logo-font;
       margin-top: 4em;
+      width: 25%;
     }
     #leftBox {
+      width: 75%;
       #leftText {
         color: #4ca4db;
         font-family: $logo-font;
@@ -141,10 +144,10 @@ html {
     width: 100%;
     justify-content: space-around;
     #mainLeftBox {
-      width: 50%;
+      width: 33%;
     }
     #mainRightBox {
-      width: 50%;
+      width: 66%;
       #mainImage {
         width: 100%; /* you can use % */
         height: auto;

@@ -1,21 +1,25 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
-const PORT = 3000;
 const verify = require('./middleware/verify');
 const methodOverride = require('method-override');
-
-const User = require('./database/models/User');
 const bodyParser = require('body-parser');
 const fs = require('fs');
-
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const cookieParser = require('cookie-parser');
+const redis = require('connect-redis')(session);
+
+const User = require('./database/models/User');
+
+const PORT = 3000;
+const saltRounds = 12;
 
 // routes
 const homeRoute = require('./routes/home');
 const galleryRoute = require('./routes/gallery');
+
+require('dotenv').config();
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,7 +29,14 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(cookieParser());
-app.use(session({ secret: 'keyboard cat' }));
+app.use(
+  session({
+    store: new redis({ url: process.env.REDIS_URL }),
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+  }),
+);
 app.use(passport.initialize());
 app.use(passport.session());
 
