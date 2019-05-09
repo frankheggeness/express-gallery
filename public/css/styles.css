@@ -63,13 +63,13 @@ html {
         /* you can use % */
         height: auto; }
   html #logo {
-    color: #87cefa; }
+    color: #4ca4db; }
   html #tagline {
     color: #4ca4db; }
   html .loginButton {
     background-color: white;
     color: #4ca4db;
-    border: 2px solid #87cefa;
+    border: 2px solid #4ca4db;
     /* Green */
     font-family: "IBM Plex Sans", sans-serif;
     float: right;
@@ -88,7 +88,7 @@ html {
     justify-content: space-between;
     align-items: center;
     font-family: "IBM Plex Sans", sans-serif;
-    border-top: 1px dotted #87cefa;
+    border-top: 1px dotted #4ca4db;
     padding-top: 10px;
     margin: 0.5em 0em 4em 0em; }
     html #header #logoBox {
@@ -99,7 +99,7 @@ html {
     html #header #tagBox {
       width: 25%;
       font-size: 0.75em;
-      border-left: 1px dotted #87cefa;
+      border-left: 1px dotted #4ca4db;
       padding: 5px; }
   html #mainPageContainer {
     display: flex;
@@ -107,7 +107,22 @@ html {
     width: 100%;
     justify-content: space-around; }
     html #mainPageContainer #mainLeftBox {
-      width: 33%; }
+      width: 33%;
+      display: flex; }
+      html #mainPageContainer #mainLeftBox .sideBox {
+        width: 100%;
+        margin: 1em 1em 1em 1em; }
+        html #mainPageContainer #mainLeftBox .sideBox .sidenav {
+          background-color: white;
+          color: black;
+          font-family: "IBM Plex Sans", sans-serif;
+          width: 100%;
+          -webkit-transition-duration: 0.4s;
+          /* Safari */
+          transition-duration: 0.4s;
+          font-size: 2em; }
+        html #mainPageContainer #mainLeftBox .sideBox .sidenav:hover {
+          color: #4ca4db; }
     html #mainPageContainer #mainRightBox {
       width: 66%; }
       html #mainPageContainer #mainRightBox #mainImage {
@@ -143,7 +158,7 @@ html {
       width: 25%;
       margin: 1em 1em 4em 1em;
       padding: 1em;
-      border-left: 1px dotted #87cefa; }
+      border-left: 1px dotted #4ca4db; }
       html #contentContainer #stackedContentContainer #stackedText {
         font-family: "IBM Plex Sans", sans-serif;
         margin: 0em 0em 0.5em 0em;

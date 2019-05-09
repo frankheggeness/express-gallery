@@ -1,6 +1,7 @@
 $logo-font: 'IBM Plex Sans', sans-serif;
 // $font-color: #7c777d;
-$font-color: #87cefa;
+// $font-color: #87cefa;
+$font-color: #4ca4db;
 $body-font-color: #4ca4db;
 $small-screen: 420px;
 
@@ -38,6 +39,7 @@ input[type='reset'] {
 
 html {
   height: 100%;
+  // height: 99vw;
   background-color: white;
   width: 99vw;
   display: flex;
@@ -145,6 +147,31 @@ html {
     justify-content: space-around;
     #mainLeftBox {
       width: 33%;
+      // side nav attempt
+      display: flex;
+      .sideBox {
+        width: 100%;
+        margin: 1em 1em 1em 1em;
+        .sidenav {
+          background-color: white;
+          // color: #4ca4db;
+          color: black;
+          // border: 2px solid $font-color; /* Green */
+          font-family: $logo-font;
+          // position: absolute;
+          width: 100%;
+          // float: right;
+
+          -webkit-transition-duration: 0.4s; /* Safari */
+          transition-duration: 0.4s;
+          font-size: 2em;
+        }
+        .sidenav:hover {
+          // background-color: #4ca4db; /* Green */
+          // background-color: #4ca4db; /* Green */
+          color: #4ca4db;
+        }
+      }
     }
     #mainRightBox {
       width: 66%;
