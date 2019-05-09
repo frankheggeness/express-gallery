@@ -100,6 +100,10 @@ passport.deserializeUser(function(user, done) {
 // app.get('/', (req, res) => {
 //   res.render('./templates/main');
 // });
+app.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
+});
 
 app.use('/', homeRoute);
 app.use('/gallery', galleryRoute);

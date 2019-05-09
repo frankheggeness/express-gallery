@@ -32,11 +32,29 @@ exports.seed = function(knex, Promise) {
         },
         {
           user_id: 1,
-          title: 'Gallery 4',
-          description: 'This is gallery 4',
+          title: 'Kelly Slater Carving Cloudbreak',
+          description: 'Epic tow session with the GOAT. ',
           photo_url:
             'https://image.redbull.com/rbcom/010/2016-06-27/1331802786648_2/0100/0/1/kelly-slater-tow-surfing-cloudbreak-tavarua-fiji.jpg',
           author: 'KiwiMan',
+        },
+        {
+          user_id: 2,
+          title: 'Releasing the fins in the Arctic',
+          description:
+            'Chris Burkard is one of the most successful adventure/travel photographers in the world. He got his start winning FTL in 2006. ',
+          photo_url:
+            'https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2019/03/04114905/120527_burkard_137393.jpg',
+          author: 'Chris Burkard',
+        },
+        {
+          user_id: 2,
+          title: 'New Perspective',
+          description:
+            'Todd Glaser won FTL in 2008 and has gone on to document surfing and its surrounding culture in unique and compelling ways ever since. Currently, he’s the go-to photographer for 11-time world champ Kelly Slater.',
+          photo_url:
+            'https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2019/03/04115803/Glasert_2019_FTL_0002.jpg',
+          author: 'Todd Glaser',
         },
       ]);
     });

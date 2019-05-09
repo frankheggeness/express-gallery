@@ -193,15 +193,63 @@ html {
       // display: inline;
       align-items: center;
       // height: 10%;
-      #newPic {
-        width: 75%;
-        height: auto;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+      border-bottom: 1px dotted $font-color;
+      #newHeader {
+        font-family: $logo-font;
+        color: $body-font-color;
+      }
+      #newPicBox {
+        // background-color: #87cefa;
+        padding: 0.5em 0.5em 0.5em 0.5em;
+        #newPic {
+          width: 50%;
+          height: auto;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          -webkit-transition-duration: 0.4s; /* Safari */
+          transition-duration: 0.4s;
+          border-style: solid;
+          border-width: 5px;
+          border-color: white;
+        }
+
+        #newPic:hover {
+          border-color: $body-font-color;
+        }
       }
     }
     #listContainer {
+      color: black;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      height: 100%;
+      width: 100%;
+      .listBox {
+        width: 25%;
+        // width: 600px;
+        height: auto;
+        margin: 1em 1em 1em 1em;
+        padding: 0.5em 0.5em 0.5em 0.5em;
+        font-family: $logo-font;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        color: $body-font-color;
+
+        .listPic {
+          width: 100%;
+          height: auto;
+          border-style: solid;
+          border-width: 5px;
+          border-color: white;
+          -webkit-transition-duration: 0.4s; /* Safari */
+          transition-duration: 0.4s;
+        }
+      }
+      .listPic:hover {
+        border-color: $body-font-color;
+      }
     }
   }
 

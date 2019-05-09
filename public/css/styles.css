@@ -135,13 +135,55 @@ html {
     display: block; }
     html #listContentContainer #newestContainer {
       height: 60%;
-      align-items: center; }
-      html #listContentContainer #newestContainer #newPic {
-        width: 75%;
+      align-items: center;
+      border-bottom: 1px dotted #4ca4db; }
+      html #listContentContainer #newestContainer #newHeader {
+        font-family: "IBM Plex Sans", sans-serif;
+        color: #4ca4db; }
+      html #listContentContainer #newestContainer #newPicBox {
+        padding: 0.5em 0.5em 0.5em 0.5em; }
+        html #listContentContainer #newestContainer #newPicBox #newPic {
+          width: 50%;
+          height: auto;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          -webkit-transition-duration: 0.4s;
+          /* Safari */
+          transition-duration: 0.4s;
+          border-style: solid;
+          border-width: 5px;
+          border-color: white; }
+        html #listContentContainer #newestContainer #newPicBox #newPic:hover {
+          border-color: #4ca4db; }
+    html #listContentContainer #listContainer {
+      color: black;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      height: 100%;
+      width: 100%; }
+      html #listContentContainer #listContainer .listBox {
+        width: 25%;
         height: auto;
-        display: block;
-        margin-left: auto;
-        margin-right: auto; }
+        margin: 1em 1em 1em 1em;
+        padding: 0.5em 0.5em 0.5em 0.5em;
+        font-family: "IBM Plex Sans", sans-serif;
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
+        color: #4ca4db; }
+        html #listContentContainer #listContainer .listBox .listPic {
+          width: 100%;
+          height: auto;
+          border-style: solid;
+          border-width: 5px;
+          border-color: white;
+          -webkit-transition-duration: 0.4s;
+          /* Safari */
+          transition-duration: 0.4s; }
+      html #listContentContainer #listContainer .listPic:hover {
+        border-color: #4ca4db; }
   html #contentContainer {
     display: flex;
     width: 100%;

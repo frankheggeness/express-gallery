@@ -15,13 +15,20 @@
 
   <div id="listContentContainer">
     <div id="newestContainer">
-      <a href="http://localhost:3000/gallery/{{new.id}}">
-        <img id="newPic" src={{new.photo_url}}>
-      </a>
+      <h2 id="newHeader">Newest Post :</h2>
+      <div id="newPicBox">
+        <a href="http://localhost:3000/gallery/{{new.id}}">
+          <img id="newPic" src={{new.photo_url}}>
+        </a>
+      </div>
+
     </div>
     <div id="listContainer">
       {{#each list}}
       <div class="listBox">
+        <a href="http://localhost:3000/gallery/{{id}}">
+          <img class="listPic" src="{{photo_url}}">
+        </a>
         <div class="listTitle">{{title}}</div>
       </div>
       {{/each}}

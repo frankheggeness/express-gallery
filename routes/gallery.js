@@ -36,10 +36,11 @@ router.post('/new', verify, (req, res) => {
     description: req.body.description,
     photo_url: req.body.photo_url,
     user_id: req.user.id,
+    author: req.body.author,
   })
     .save()
     .then(() => {
-      return res.redirect(`/gallery`);
+      return res.redirect(`/gallery/list`);
     });
 });
 

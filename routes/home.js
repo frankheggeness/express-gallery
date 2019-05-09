@@ -11,6 +11,17 @@ router.get('/login', profileVerify, (req, res) => {
   res.render('./templates/login');
 });
 
+router.get('/:user_id', verify, (req, res) => {
+  new User()
+    .where({ id: req.params.user_id })
+    .fetch()
+    .then((user) => {
+      let userObj = user.toJSON();
+      console.log('@@@@@@@@@@@@@@' + userObj);
+      res.render('./templates/user', userObj);
+    });
+});
+
 router.get('/', (req, res) => {
   new Gallery().fetchAll().then((results) => {
     console.log(results.toJSON());
