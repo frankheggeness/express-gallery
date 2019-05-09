@@ -182,6 +182,29 @@ html {
     }
   }
 
+  // list gallery
+
+  #listContentContainer {
+    height: 100%;
+    width: 100%;
+    display: block;
+    #newestContainer {
+      height: 60%;
+      // display: inline;
+      align-items: center;
+      // height: 10%;
+      #newPic {
+        width: 75%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    #listContainer {
+    }
+  }
+
   // single gallery below
 
   #contentContainer {

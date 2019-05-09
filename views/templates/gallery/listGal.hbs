@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SpotChek</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  {{>fonts}}
+</head>
+
+<body>
+  {{>header}}
+
+  <div id="listContentContainer">
+    <div id="newestContainer">
+      <a href="http://localhost:3000/gallery/{{new.id}}">
+        <img id="newPic" src={{new.photo_url}}>
+      </a>
+    </div>
+    <div id="listContainer">
+      {{#each list}}
+      <div class="listBox">
+        <div class="listTitle">{{title}}</div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+
+  {{!-- https://images.ctfassets.net/kl4m5s78bekv/1mmbReS2MxyX6JeRqslAnj/7e77545431792c51c40851608249e8d1/klein_oceanbeach_feb2016_012223.jpg --}}
+
+
+
+</body>
+
+</html>

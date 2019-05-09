@@ -6,6 +6,26 @@ const passport = require('passport');
 const User = require('../database/models/User');
 const Gallery = require('../database/models/Gallery');
 
+router.get('/list', (req, res) => {
+  new Gallery()
+    .query((qb) => {
+      qb.orderBy('id', 'DESC');
+    })
+    .fetchAll()
+    .then((results) => {
+      let resultsObj = results.toJSON();
+      let newestPost = resultsObj.splice(0, 1);
+      let galleryObj = resultsObj;
+      console.log(newestPost);
+      let outputObj = {
+        new: newestPost[0],
+        list: galleryObj,
+      };
+
+      return res.render('./templates/gallery/listGal', outputObj);
+    });
+});
+
 router.get('/new', verify, (req, res) => {
   return res.render('./templates/gallery/newGal');
 });

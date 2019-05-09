@@ -129,6 +129,19 @@ html {
         width: 100%;
         /* you can use % */
         height: auto; }
+  html #listContentContainer {
+    height: 100%;
+    width: 100%;
+    display: block; }
+    html #listContentContainer #newestContainer {
+      height: 60%;
+      align-items: center; }
+      html #listContentContainer #newestContainer #newPic {
+        width: 75%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto; }
   html #contentContainer {
     display: flex;
     width: 100%;
