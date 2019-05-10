@@ -5,6 +5,7 @@ const verify = require('../middleware/verify');
 const passport = require('passport');
 const User = require('../database/models/User');
 const Gallery = require('../database/models/Gallery');
+const editVerify = require('../middleware/editVerify');
 
 router.get('/list', (req, res) => {
   new Gallery()
@@ -70,7 +71,22 @@ router.get('/:gallery_id', (req, res) => {
     });
 });
 
+// fix delete below
+
 router.delete('/:gallery_id', verify, (req, res) => {
+  new Gallery({
+    id: req.params.gallery_id,
+  })
+    .fetch()
+    .then((gallery) => {
+      let galleryObj = gallery.toJSON();
+      console.log('#$@%#^$#$');
+      console.log(galleryObj);
+      if (req.user.id !== galleryObj.user_id) {
+        return res.send('brah this aint yours');
+      }
+    });
+
   new Gallery({
     id: req.params.gallery_id,
   })
@@ -80,12 +96,18 @@ router.delete('/:gallery_id', verify, (req, res) => {
     });
 });
 
-router.get('/:gallery_id/edit', (req, res) => {
+router.get('/:gallery_id/edit', verify, (req, res) => {
   new Gallery()
     .where({ id: req.params.gallery_id })
     .fetch({ withRelated: ['users'] })
     .then((results) => {
       let mainGalleryObj = results.toJSON();
+      if (req.user.role_id === 1) {
+        return res.render('./templates/gallery/editGal', mainGalleryObj);
+      }
+      if (mainGalleryObj.users.id !== req.user.id) {
+        return res.send('you arent allowed to do that!');
+      }
       return res.render('./templates/gallery/editGal', mainGalleryObj);
     });
 });
@@ -97,10 +119,10 @@ router.post('/:gallery_id', verify, (req, res) => {
   Gallery.where({ id: gallery_id })
     .fetch()
     .then((gallery) => {
-      if (gallery.attributes.user_id !== req.user.id && req.user.role_id !== 1) {
-        req.flash('error', 'You may not edit photos that are not yours');
-        return res.redirect(`/gallery/${gallery_id}`);
-      }
+      // if (gallery.attributes.user_id !== req.user.id && req.user.role_id !== 1) {
+      //   req.flash('error', 'You may not edit photos that are not yours');
+      //   return res.redirect(`/gallery/${gallery_id}`);
+      // }
       new Gallery({ id: gallery_id })
         .save(
           {

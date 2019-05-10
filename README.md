@@ -50,3 +50,6 @@ Once you have finished with all of the requirements outlined above, you are enco
 - Add intergration tests using Mocha and Chai, and end-to-end tests using SuperTest.
 - Create an Admin role, that has elevated privledges. (i.e. Admin can delete users, Admin can edit/delete any post, etc.).
 - Get a code review from an instructor or TA :sparkles:
+
+possible changes:
+comments

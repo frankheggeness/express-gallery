@@ -86,6 +86,7 @@ passport.deserializeUser(function(user, done) {
     done(null, {
       id: user.id,
       username: user.username,
+      role_id: user.role_id,
     });
   });
 });
