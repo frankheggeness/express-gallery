@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const session = require('express-session');
 const passport = require('passport');
+const bcrypt = require('bcryptjs');
 
 const LocalStrategy = require('passport-local');
 const cookieParser = require('cookie-parser');
@@ -55,14 +56,16 @@ passport.use(
           return done(null, false, { message: 'bad username and password' });
         } else {
           user = user.toJSON();
-          // happy route: username exists, passsword matches
-          if (user.password === password) {
-            return done(null, user);
-          }
-          // error route
-          else {
-            return done(null, false, { message: 'bad username or password' });
-          }
+          bcrypt.compare(password, user.password).then((res) => {
+            // happy route: username exists, passsword matches
+            if (res) {
+              return done(null, user);
+            }
+            // error route
+            else {
+              return done(null, false, { message: 'bad username or password' });
+            }
+          });
         }
       })
       .catch((err) => {
@@ -111,16 +114,42 @@ app.get('/register', (req, res) => {
   res.render('./templates/register');
 });
 
+// app.post('/register', (req, res) => {
+//   new User({
+//     username: req.body.username,
+//     password: req.body.password,
+//     role_id: 2,
+//   })
+//     .save()
+//     .then(() => {
+//       return res.redirect(`/login`);
+//     });
+// });
 app.post('/register', (req, res) => {
-  new User({
-    username: req.body.username,
-    password: req.body.password,
-    role_id: 2,
-  })
-    .save()
-    .then(() => {
-      return res.redirect(`/login`);
+  bcrypt.genSalt(saltRounds, (err, salt) => {
+    if (err) {
+      return res.send(500, 'ERROR');
+    }
+    bcrypt.hash(req.body.password, salt, (err, hash) => {
+      if (err) {
+        return res.send(500, 'ERROR');
+      }
+      return new User({
+        username: req.body.username,
+        password: hash,
+        role_id: 2,
+      })
+        .save()
+        .then((user) => {
+          console.log(user);
+          return res.redirect('/login');
+        })
+        .catch((err) => {
+          console.log(err);
+          return res.send('error making account');
+        });
     });
+  });
 });
 
 app.use('/', homeRoute);

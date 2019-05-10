@@ -64,9 +64,11 @@ html {
         /* you can use % */
         height: auto; }
   html #logo {
-    color: #4ca4db; }
+    color: #4ca4db;
+    font-size: 5vw; }
   html #tagline {
-    color: #4ca4db; }
+    color: #4ca4db;
+    font-size: 0.7vw; }
   html .loginButton {
     background-color: white;
     color: #4ca4db;
