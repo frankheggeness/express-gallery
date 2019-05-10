@@ -17,8 +17,20 @@ router.get('/:user_id', verify, (req, res) => {
     .fetch()
     .then((user) => {
       let userObj = user.toJSON();
-      console.log('@@@@@@@@@@@@@@' + userObj);
-      res.render('./templates/user', userObj);
+      new Gallery()
+        .where({ user_id: req.params.user_id })
+        .fetchAll()
+        .then((galleries) => {
+          console.log('F#@%@%#%^@$^@');
+          console.log(galleries.toJSON());
+
+          let userPageObj = {
+            user: userObj,
+            pictures: galleries.toJSON(),
+          };
+
+          res.render('./templates/user', userPageObj);
+        });
     });
 });
 

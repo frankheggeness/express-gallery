@@ -18,7 +18,7 @@
       <img id="leftImage" src="{{photo_url}}" alt="">
     </div>
     <div id="formBox">
-      <form action="/gallery/{{id}}?_method=PUT">
+      <form action="/gallery/{{id}}" method="POST">
         <div class="inputClass">
           <label>Photo Title:</label>
           <input type="text" name="title" value={{title}} />

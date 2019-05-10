@@ -16,7 +16,6 @@ router.get('/list', (req, res) => {
       let resultsObj = results.toJSON();
       let newestPost = resultsObj.splice(0, 1);
       let galleryObj = resultsObj;
-      console.log(newestPost);
       let outputObj = {
         new: newestPost[0],
         list: galleryObj,
@@ -50,7 +49,6 @@ router.get('/:gallery_id', (req, res) => {
     .fetch({ withRelated: ['users'] })
     .then((results) => {
       let mainGalleryObj = results.toJSON();
-      console.log(results.toJSON());
       // return res.render('./templates/main');
       new Gallery()
         .query(function(qb) {
@@ -88,12 +86,12 @@ router.get('/:gallery_id/edit', (req, res) => {
     .fetch({ withRelated: ['users'] })
     .then((results) => {
       let mainGalleryObj = results.toJSON();
-      console.log(results.toJSON());
       return res.render('./templates/gallery/editGal', mainGalleryObj);
     });
 });
 
-router.put('/:gallery_id', verify, (req, res) => {
+// edit attempt 2
+router.post('/:gallery_id', verify, (req, res) => {
   const body = req.body;
   const gallery_id = req.params.gallery_id;
   Gallery.where({ id: gallery_id })
@@ -106,44 +104,20 @@ router.put('/:gallery_id', verify, (req, res) => {
       new Gallery({ id: gallery_id })
         .save(
           {
-            // user_id: req.user_id,
+            user_id: req.user_id,
             title: body.title,
             photo_url: body.photo_url,
             description: body.description,
+            author: body.author,
           },
           { patch: true },
         )
         .then(() => {
           console.log('edit done');
-          return res.redirect(`/gallery/${gallery_id}`);
+          return res.redirect(`/gallery/list`);
         });
     });
 });
-
-// router.put('/:id', isAuthenticated, (req, res) => {
-//   const body = req.body;
-//   const id = req.params.id;
-
-//   Gallery.where({ id: id }).fetch()
-//     .then((photo) => {
-//       if (photo.attributes.user_id !== req.user.id && req.user.role_id !== 1) {
-//         req.flash('error', 'You cannot edit photos that aren\'t yours');
-//         return res.redirect(`/gallery/${id}`);
-//       }
-
-//       new Gallery({ id: id })
-//         .save({
-//           user_id: req.user.id,
-//           title: body.title,
-//           link: body.link,
-//           author: body.author,
-//           description: body.description
-//         }, { patch: true })
-//         .then(() => {
-//           return res.redirect(`/gallery/${photo.id}`);
-//         });
-//     });
-// });
 
 module.exports = router;
 

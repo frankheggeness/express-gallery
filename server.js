@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const session = require('express-session');
 const passport = require('passport');
+
 const LocalStrategy = require('passport-local');
 const cookieParser = require('cookie-parser');
 const redis = require('connect-redis')(session);
@@ -103,6 +104,22 @@ passport.deserializeUser(function(user, done) {
 app.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/');
+});
+
+app.get('/register', (req, res) => {
+  res.render('./templates/register');
+});
+
+app.post('/register', (req, res) => {
+  new User({
+    username: req.body.username,
+    password: req.body.password,
+    role_id: 2,
+  })
+    .save()
+    .then(() => {
+      return res.redirect(`/login`);
+    });
 });
 
 app.use('/', homeRoute);

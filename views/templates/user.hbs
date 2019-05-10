@@ -13,13 +13,26 @@
 <body>
   {{>header}}
 
+  <div id="listContentContainer">
+    <div id="newestContainer">
+      <h2 id="newHeader">{{user.username}}'s Profile</h2>
 
-  <div>{{username}}</div>
 
-  <h1>{{id}}</h1>
-
-  <a href="http://localhost:3000/logout">
-    <button>logout</button></a>
+    </div>
+    <div id="listContainer">
+      <div id="listHeadBox">
+        <h1>{{user.username}}'s Gallery</h1>
+      </div>
+      {{#each pictures}}
+      <div class="listBox">
+        <a href="http://localhost:3000/gallery/{{id}}">
+          <img class="listPic" src="{{photo_url}}">
+        </a>
+        <div class="listTitle">{{title}}</div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
 
 
 

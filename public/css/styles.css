@@ -47,6 +47,7 @@ html {
     margin: 0em 0em 0em 0em; }
     html #formContainer #formBox {
       display: flex;
+      flex-wrap: wrap;
       top: 25%;
       left: 50%;
       right: 50%;
@@ -80,7 +81,8 @@ html {
   html .loginButton:hover {
     background-color: #4ca4db;
     /* Green */
-    color: white; }
+    color: white;
+    cursor: pointer; }
   html #header {
     width: 100%;
     height: 6em;
@@ -179,7 +181,7 @@ html {
         -webkit-transition-duration: 0.4s;
         /* Safari */
         transition-duration: 0.4s;
-        color: #4ca4db; }
+        color: black; }
         html #listContentContainer #listContainer .listBox .listPic {
           width: 100%;
           height: auto;

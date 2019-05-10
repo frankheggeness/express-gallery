@@ -65,6 +65,7 @@ html {
     margin: 0em 0em 0em 0em;
     #formBox {
       display: flex;
+      flex-wrap: wrap;
       // position: absolute; /* or absolute */
       top: 25%;
       left: 50%;
@@ -109,6 +110,7 @@ html {
   .loginButton:hover {
     background-color: #4ca4db; /* Green */
     color: white;
+    cursor: pointer;
   }
 
   #header {
@@ -243,7 +245,7 @@ html {
         font-family: $logo-font;
         -webkit-transition-duration: 0.4s; /* Safari */
         transition-duration: 0.4s;
-        color: $body-font-color;
+        color: black;
 
         .listPic {
           width: 100%;
