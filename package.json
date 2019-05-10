@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/frankheggeness/express-gallery#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "bookshelf": "^0.14.2",
     "connect-redis": "^3.4.1",

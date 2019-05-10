@@ -226,11 +226,19 @@ html {
       justify-content: space-around;
       height: 100%;
       width: 100%;
+      #listHeadBox {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-family: $logo-font;
+        color: $body-font-color;
+        margin: 0em 0em 0em 0em;
+      }
       .listBox {
         width: 25%;
         // width: 600px;
         height: auto;
-        margin: 1em 1em 1em 1em;
+        margin: 0em 1em 0em 1em;
         padding: 0.5em 0.5em 0.5em 0.5em;
         font-family: $logo-font;
         -webkit-transition-duration: 0.4s; /* Safari */
@@ -296,7 +304,8 @@ html {
       margin: 1em 1em 4em 1em;
       // border: solid 1px;
       padding: 1em;
-      border-left: 1px dotted $font-color;
+      border-top: 1px dotted $font-color;
+      // border-bottom: 1px dotted $font-color;
       #stackedText {
         font-family: $logo-font;
         margin: 0em 0em 0.5em 0em;
@@ -313,6 +322,14 @@ html {
         .smallPic {
           width: 100%;
           height: 75%;
+          -webkit-transition-duration: 0.4s; /* Safari */
+          transition-duration: 0.4s;
+          border-style: solid;
+          border-width: 5px;
+          border-color: white;
+        }
+        .smallPic:hover {
+          border-color: $body-font-color;
         }
         .stackedText {
           // margin: 1em 1em 4em 1em;
