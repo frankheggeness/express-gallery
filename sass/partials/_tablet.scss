@@ -217,8 +217,16 @@
           color: $body-font-color;
           margin: 0em 0em 0em 0em;
         }
+        #userHeadBox {
+          width: 100%;
+          height: 1vw;
+          text-align: center;
+          font-family: $logo-font;
+          color: $body-font-color;
+          margin: 0em 0em 0em 0em;
+        }
         .listBox {
-          width: 25%;
+          width: 40%;
           // width: 600px;
           height: auto;
           margin: 0em 1em 0em 1em;

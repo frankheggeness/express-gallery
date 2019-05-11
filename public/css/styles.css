@@ -151,8 +151,15 @@
           font-family: "IBM Plex Sans", sans-serif;
           color: #4ca4db;
           margin: 0em 0em 0em 0em; }
+        html #listContentContainer #listContainer #userHeadBox {
+          width: 100%;
+          height: 1vw;
+          text-align: center;
+          font-family: "IBM Plex Sans", sans-serif;
+          color: #4ca4db;
+          margin: 0em 0em 0em 0em; }
         html #listContentContainer #listContainer .listBox {
-          width: 25%;
+          width: 40%;
           height: auto;
           margin: 0em 1em 0em 1em;
           padding: 0.5em 0.5em 0.5em 0.5em;
@@ -380,6 +387,13 @@
           font-family: "IBM Plex Sans", sans-serif;
           color: #4ca4db;
           margin: 0em 0em 0em 0em; }
+        html #listContentContainer #listContainer #userHeadBox {
+          width: 100%;
+          height: 1vw;
+          text-align: center;
+          font-family: "IBM Plex Sans", sans-serif;
+          color: #4ca4db;
+          margin: 0em 0em 0em 0em; }
         html #listContentContainer #listContainer .listBox {
           width: 25%;
           height: auto;
@@ -456,7 +470,7 @@
             margin-bottom: 2px;
             font-family: "IBM Plex Sans", sans-serif; } }
 
-@media (max-width: 425px) {
+@media (max-width: 426px) {
   html {
     height: 100%;
     width: 99vw;
@@ -470,7 +484,9 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      margin-top: 4em; }
+      margin-top: 4em;
+      background-image: url("../../assets/white-waves.png");
+      background-repeat: repeat; }
     html #formContainer {
       display: flex;
       height: 75%;
@@ -485,16 +501,15 @@
         right: 50%;
         font-family: "IBM Plex Sans", sans-serif;
         margin-top: 4em;
-        width: 25%; }
-      html #formContainer #leftBox {
-        width: 75%; }
-        html #formContainer #leftBox #leftText {
-          color: #4ca4db;
-          font-family: "IBM Plex Sans", sans-serif; }
-        html #formContainer #leftBox #leftImage {
-          width: 80%;
-          /* you can use % */
-          height: auto; }
+        width: 80%; }
+      html #formContainer #leftBox #leftText {
+        color: #4ca4db;
+        font-family: "IBM Plex Sans", sans-serif; }
+      html #formContainer #leftBox #leftImage {
+        width: 80%;
+        /* you can use % */
+        height: auto;
+        display: none; }
     html #logo {
       color: #4ca4db;
       font-size: 4vw; }
@@ -546,25 +561,33 @@
       display: flex;
       height: 75%;
       width: 100%;
+      flex-wrap: wrap;
       justify-content: space-around; }
       html #mainPageContainer #mainLeftBox {
-        width: 33%;
+        width: 100%;
         display: flex; }
         html #mainPageContainer #mainLeftBox .sideBox {
           width: 100%;
-          margin: 1em 1em 1em 1em; }
+          margin: 1em 1em 1em 1em;
+          font-size: 1.5em; }
+          html #mainPageContainer #mainLeftBox .sideBox #mySidenav {
+            width: 100%; }
           html #mainPageContainer #mainLeftBox .sideBox .sidenav {
+            border: 2px solid;
             background-color: white;
-            color: black;
+            color: #4ca4db;
             font-family: "IBM Plex Sans", sans-serif;
             width: 100%;
+            text-decoration: underline;
+            padding: 3px;
             -webkit-transition-duration: 0.4s;
             /* Safari */
             transition-duration: 0.4s; }
           html #mainPageContainer #mainLeftBox .sideBox .sidenav:hover {
             color: #4ca4db; }
       html #mainPageContainer #mainRightBox {
-        width: 66%; }
+        width: 100%;
+        display: none; }
         html #mainPageContainer #mainRightBox #mainImage {
           width: 100%;
           /* you can use % */
@@ -574,7 +597,6 @@
       width: 100%;
       display: block; }
       html #listContentContainer #newestContainer {
-        height: 60%;
         align-items: center;
         border-bottom: 1px dotted #4ca4db; }
         html #listContentContainer #newestContainer #newHeader {
@@ -583,7 +605,7 @@
         html #listContentContainer #newestContainer #newPicBox {
           padding: 0.5em 0.5em 0.5em 0.5em; }
           html #listContentContainer #newestContainer #newPicBox #newPic {
-            width: 50%;
+            width: 100%;
             height: auto;
             display: block;
             margin-left: auto;
@@ -610,8 +632,15 @@
           font-family: "IBM Plex Sans", sans-serif;
           color: #4ca4db;
           margin: 0em 0em 0em 0em; }
+        html #listContentContainer #listContainer #userHeadBox {
+          width: 100%;
+          height: 1vw;
+          text-align: center;
+          font-family: "IBM Plex Sans", sans-serif;
+          color: #4ca4db;
+          margin: 0em 0em 0em 0em; }
         html #listContentContainer #listContainer .listBox {
-          width: 25%;
+          width: 100%;
           height: auto;
           margin: 0em 1em 0em 1em;
           padding: 0.5em 0.5em 0.5em 0.5em;
@@ -657,7 +686,8 @@
         html #contentContainer #bigContentBox #editButtonsBox {
           display: flex; }
       html #contentContainer #stackedContentContainer {
-        width: 25%;
+        display: none;
+        width: 0%;
         margin: 1em 1em 4em 1em;
         padding: 1em;
         border-top: 1px dotted #4ca4db; }
