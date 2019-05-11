@@ -258,7 +258,6 @@ $small-screen: 420px;
       height: 100%;
       #bigContentBox {
         width: 75%;
-        // background-color: aquamarine;
         margin: 1em 1em 4em 1em;
         // border: solid 1px;
         #bigTitle {
@@ -285,6 +284,7 @@ $small-screen: 420px;
         }
         #editButtonsBox {
           display: flex;
+          border-bottom: 1px dotted $body-font-color;
         }
       }
       #stackedContentContainer {

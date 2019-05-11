@@ -439,7 +439,8 @@
           font-family: "IBM Plex Sans", sans-serif;
           margin: 1em 1em 4em 1em; }
         html #contentContainer #bigContentBox #editButtonsBox {
-          display: flex; }
+          display: flex;
+          border-bottom: 1px dotted #4ca4db; }
       html #contentContainer #stackedContentContainer {
         width: 25%;
         margin: 1em 1em 4em 1em;
@@ -738,6 +739,41 @@ input[type='reset'] {
   border: none;
   color: white;
   padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer; }
+
+#commentsContainer {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: black;
+  margin: 1em 1em 4em 1em; }
+  #commentsContainer .commentBox {
+    border-top: 1px dotted #4ca4db; }
+
+#commentBodyInput {
+  width: 100%;
+  height: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #4ca4db;
+  border-radius: 4px; }
+
+#commentFormBox {
+  display: flex;
+  flex-wrap: wrap;
+  top: 25%;
+  left: 50%;
+  right: 50%;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-top: 4em;
+  width: 25%; }
+
+.editButtons {
+  background-color: #4ca4db;
+  border: none;
+  color: white;
+  padding: 8px 16px;
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer; }

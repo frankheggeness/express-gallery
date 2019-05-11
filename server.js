@@ -7,6 +7,7 @@ const fs = require('fs');
 const session = require('express-session');
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
+// const flash = require('connect-flash');
 
 const LocalStrategy = require('passport-local');
 const cookieParser = require('cookie-parser');
@@ -94,17 +95,6 @@ passport.deserializeUser(function(user, done) {
   });
 });
 
-// app.use('/', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }));
-
-// app.get('/', (req, res) => {
-//   res.render('./templates/main');
-// });
-
-// app.use('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }));
-
-// app.get('/', (req, res) => {
-//   res.render('./templates/main');
-// });
 app.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/');
@@ -114,17 +104,6 @@ app.get('/register', (req, res) => {
   res.render('./templates/register');
 });
 
-// app.post('/register', (req, res) => {
-//   new User({
-//     username: req.body.username,
-//     password: req.body.password,
-//     role_id: 2,
-//   })
-//     .save()
-//     .then(() => {
-//       return res.redirect(`/login`);
-//     });
-// });
 app.post('/register', (req, res) => {
   bcrypt.genSalt(saltRounds, (err, salt) => {
     if (err) {

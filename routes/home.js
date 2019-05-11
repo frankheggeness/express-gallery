@@ -21,8 +21,8 @@ router.get('/:user_id', verify, (req, res) => {
         .where({ user_id: req.params.user_id })
         .fetchAll()
         .then((galleries) => {
-          console.log('F#@%@%#%^@$^@');
-          console.log(galleries.toJSON());
+          // console.log('F#@%@%#%^@$^@');
+          // console.log(galleries.toJSON());
 
           let userPageObj = {
             user: userObj,
@@ -36,7 +36,7 @@ router.get('/:user_id', verify, (req, res) => {
 
 router.get('/', (req, res) => {
   new Gallery().fetchAll().then((results) => {
-    console.log(results.toJSON());
+    // console.log(results.toJSON());
     let lastResult = results.pop().toJSON();
     let stack1 = results.pop().toJSON();
     let stack2 = results.pop().toJSON();
@@ -53,7 +53,7 @@ router.get('/', (req, res) => {
 
 router.get('/:user_id', verify, (req, res) => {
   new Gallery().fetchAll().then((results) => {
-    console.log(results.toJSON());
+    // console.log(results.toJSON());
     let lastResult = results.pop().toJSON();
     let stack1 = results.pop().toJSON();
     let stack2 = results.pop().toJSON();

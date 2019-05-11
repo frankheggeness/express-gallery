@@ -12,6 +12,10 @@ class User extends bookshelf.Model {
   Galleries() {
     return this.hasMany('Gallery');
   }
+
+  Comments() {
+    return this.hasMany('Comment');
+  }
   // siblings() {
   //   return this.hasMany('users');
   // }

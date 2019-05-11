@@ -18,20 +18,37 @@
       <div class="bigPic">
         <img class="bigImage" src={{main.photo_url}}>
       </div>
-      <a href="http://localhost:3000/{{main.users.id}}">
+      <a href="/{{main.users.id}}">
         <h4 id="bigUsername">Submitted by: {{main.users.username}}</h4>
       </a>
       <div class="bigAuthor">Photograph by: {{main.author}}</div>
       <div class="bigTextBody">{{main.description}}</div>
       <div id="editButtonsBox">
-        <form method="POST" action="/gallery/{{main.id}}?_method=DELETE">
+        {{!-- <form method="POST" action="/gallery/{{main.id}}?_method=DELETE">
 
-          <input id="deleteButton" type="submit" value="Delete">
-        </form>
+          <input class="editButtons" id="deleteButton" type="submit" value="Delete">
+        </form> --}}
         <form method="GET" action="/gallery/{{main.id}}/edit">
 
-          <input id="editButton" type="submit" value="Edit">
+          <input class='editButtons' id="editButton" type="submit" value="Edit">
         </form>
+      </div>
+
+      <div id="commentsContainer">
+        <h3>Comments:</h3>
+        <form method="GET" action="/gallery/{{main.id}}/comment">
+
+          <input id="commentButton" type="submit" value="Post new comment">
+        </form>
+        {{#each comments}}
+        <div class="commentBox">
+          <a href="/{{users.id}}">
+            <h4 class="commentUser">{{users.username}}</h4>
+          </a>
+
+          <p class="commentBody">{{body}}</p>
+        </div>
+        {{/each}}
       </div>
 
     </div>

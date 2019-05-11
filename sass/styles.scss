@@ -40,3 +40,45 @@ input[type='reset'] {
   margin: 4px 2px;
   cursor: pointer;
 }
+
+#commentsContainer {
+  font-family: $logo-font;
+  color: black;
+  margin: 1em 1em 4em 1em;
+  // border-top: 1px dotted $body-font-color;
+  .commentBox {
+    border-top: 1px dotted $body-font-color;
+  }
+}
+
+#commentBodyInput {
+  width: 100%;
+  height: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid $body-font-color;
+  border-radius: 4px;
+}
+
+#commentFormBox {
+  display: flex;
+  flex-wrap: wrap;
+  // position: absolute; /* or absolute */
+  top: 25%;
+  left: 50%;
+  right: 50%;
+  font-family: $logo-font;
+  margin-top: 4em;
+  width: 25%;
+}
+
+.editButtons {
+  background-color: $body-font-color;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
