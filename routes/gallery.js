@@ -102,6 +102,8 @@ router.get('/:gallery_id/edit', verify, (req, res) => {
     .fetch({ withRelated: ['users'] })
     .then((results) => {
       let mainGalleryObj = results.toJSON();
+      // console.log(mainGalleryObj);
+      // console.log(mainGalleryObj.title);
       if (req.user.role_id === 1) {
         return res.render('./templates/gallery/editGal', mainGalleryObj);
       }
@@ -119,10 +121,6 @@ router.post('/:gallery_id', verify, (req, res) => {
   Gallery.where({ id: gallery_id })
     .fetch()
     .then((gallery) => {
-      // if (gallery.attributes.user_id !== req.user.id && req.user.role_id !== 1) {
-      //   req.flash('error', 'You may not edit photos that are not yours');
-      //   return res.redirect(`/gallery/${gallery_id}`);
-      // }
       new Gallery({ id: gallery_id })
         .save(
           {

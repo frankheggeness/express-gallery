@@ -76,6 +76,14 @@ exports.seed = function(knex, Promise) {
           author: 'Nikki Brooks',
         },
         {
+          user_id: 2,
+          title: 'Karina Rozunko Styling Down the Line',
+          description:
+            'Karina Rozunko is such a talented surfer, and she’s always got a good attitude. Her she is with a technical heal hang. ',
+          photo_url: 'https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2018/11/14135508/16-JW18CN1D0150.jpg',
+          author: 'Dylan Gordon',
+        },
+        {
           user_id: 1,
           title: 'Davey van Zyl Painting the Landscape',
           description:
@@ -83,14 +91,6 @@ exports.seed = function(knex, Promise) {
           photo_url:
             'https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2018/09/26111353/GregEwing_Azores_Tripwire_Surfline_009.jpg',
           author: 'Greg Ewing',
-        },
-        {
-          user_id: 2,
-          title: 'Karina Rozunko Styling Down the Line',
-          description:
-            'Karina Rozunko is such a talented surfer, and she’s always got a good attitude. Her she is with a technical heal hang. ',
-          photo_url: 'https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2018/11/14135508/16-JW18CN1D0150.jpg',
-          author: 'Dylan Gordon',
         },
       ]);
     });

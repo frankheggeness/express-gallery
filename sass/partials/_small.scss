@@ -1,0 +1,327 @@
+@media (max-width: 425px) {
+  $logo-font: 'IBM Plex Sans', sans-serif;
+  // $font-color: #7c777d;
+  // $font-color: #87cefa;
+  $font-color: #4ca4db;
+  $body-font-color: #4ca4db;
+  $small-screen: 420px;
+  html {
+    height: 100%;
+    // height: 99vw;
+    // background-color: white;
+    width: 99vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    body {
+      width: 75%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 4em;
+    }
+
+    // form css below
+
+    #formContainer {
+      display: flex;
+      height: 75%;
+      width: 100%;
+      justify-content: space-between;
+      margin: 0em 0em 0em 0em;
+      #formBox {
+        display: flex;
+        flex-wrap: wrap;
+        // position: absolute; /* or absolute */
+        top: 25%;
+        left: 50%;
+        right: 50%;
+        font-family: $logo-font;
+        margin-top: 4em;
+        width: 25%;
+      }
+      #leftBox {
+        width: 75%;
+        #leftText {
+          color: #4ca4db;
+          font-family: $logo-font;
+        }
+        #leftImage {
+          width: 80%; /* you can use % */
+          height: auto;
+        }
+      }
+    }
+
+    // header below
+
+    #logo {
+      color: $font-color;
+      font-size: 4vw;
+    }
+    #tagline {
+      color: #4ca4db;
+      font-size: 0.75em;
+      display: none;
+    }
+    #taglineSmall {
+      color: #4ca4db;
+      font-size: 0.75em;
+      // display: none;
+    }
+
+    .loginButton {
+      font-size: 0.6em;
+      background-color: white;
+      color: #4ca4db;
+      border: 2px solid $font-color; /* Green */
+      font-family: $logo-font;
+      // position: absolute;
+      float: right;
+      margin: 0em 0em 0.5em 0.5em;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+    }
+    .loginButton:hover {
+      background-color: #4ca4db; /* Green */
+      color: white;
+      cursor: pointer;
+    }
+
+    // #outerHeader {
+    //   height: 20%;
+    // }
+    #header {
+      // background-color: black;
+      width: 100%;
+      height: 6em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: $logo-font;
+      border-top: 1px dotted $font-color;
+      padding-top: 10px;
+      margin: 1em 0em 1em 0em;
+      #logoBox {
+        width: 75%;
+        font-size: 3.25em;
+        font-weight: 900;
+        letter-spacing: 4px;
+      }
+      #tagBox {
+        width: 25%;
+        font-size: 0.75em;
+        border-left: 1px dotted $font-color;
+        padding: 5px;
+        // #tagLine {
+        //   color: black;
+        // }
+      }
+    }
+
+    // main page below
+
+    #mainPageContainer {
+      display: flex;
+      height: 75%;
+      width: 100%;
+      justify-content: space-around;
+      #mainLeftBox {
+        width: 33%;
+        // side nav attempt
+        display: flex;
+        .sideBox {
+          width: 100%;
+          margin: 1em 1em 1em 1em;
+          .sidenav {
+            background-color: white;
+            // color: #4ca4db;
+            color: black;
+            // border: 2px solid $font-color; /* Green */
+            font-family: $logo-font;
+            // position: absolute;
+            width: 100%;
+            // float: right;
+
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            // font-size:
+            // font-size:
+          }
+          .sidenav:hover {
+            // background-color: #4ca4db; /* Green */
+            // background-color: #4ca4db; /* Green */
+            color: #4ca4db;
+          }
+        }
+      }
+      #mainRightBox {
+        width: 66%;
+        #mainImage {
+          width: 100%; /* you can use % */
+          height: auto;
+        }
+      }
+    }
+
+    // list gallery
+
+    #listContentContainer {
+      height: 100%;
+      width: 100%;
+      display: block;
+      #newestContainer {
+        height: 60%;
+        // display: inline;
+        align-items: center;
+        // height: 10%;
+        border-bottom: 1px dotted $font-color;
+        #newHeader {
+          font-family: $logo-font;
+          color: $body-font-color;
+        }
+        #newPicBox {
+          // background-color: #87cefa;
+          padding: 0.5em 0.5em 0.5em 0.5em;
+          #newPic {
+            width: 50%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            border-style: solid;
+            border-width: 5px;
+            border-color: white;
+          }
+
+          #newPic:hover {
+            border-color: $body-font-color;
+          }
+        }
+      }
+      #listContainer {
+        color: black;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        height: 100%;
+        width: 100%;
+        #listHeadBox {
+          width: 100%;
+          height: auto;
+          text-align: center;
+          font-family: $logo-font;
+          color: $body-font-color;
+          margin: 0em 0em 0em 0em;
+        }
+        .listBox {
+          width: 25%;
+          // width: 600px;
+          height: auto;
+          margin: 0em 1em 0em 1em;
+          padding: 0.5em 0.5em 0.5em 0.5em;
+          font-family: $logo-font;
+          -webkit-transition-duration: 0.4s; /* Safari */
+          transition-duration: 0.4s;
+          color: black;
+
+          .listPic {
+            width: 100%;
+            height: auto;
+            border-style: solid;
+            border-width: 5px;
+            border-color: white;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+          }
+        }
+        .listPic:hover {
+          border-color: $body-font-color;
+        }
+      }
+    }
+
+    // single gallery below
+
+    #contentContainer {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      #bigContentBox {
+        width: 75%;
+        // background-color: aquamarine;
+        margin: 1em 1em 4em 1em;
+        // border: solid 1px;
+        #bigTitle {
+          font-family: $logo-font;
+          margin: 0em 0em 0.5em 0em;
+          color: $body-font-color;
+        }
+        #bigUsername {
+          margin: 0.5em 0em 0em 0em;
+          font-family: $logo-font;
+        }
+        .bigAuthor {
+          margin: 0em 0em 0em 0em;
+          font-family: $logo-font;
+        }
+        .bigImage {
+          // width: 400px;
+          width: 100%;
+          height: 60%;
+        }
+        .bigTextBody {
+          font-family: $logo-font;
+          margin: 1em 1em 4em 1em;
+        }
+        #editButtonsBox {
+          display: flex;
+        }
+      }
+      #stackedContentContainer {
+        width: 25%;
+        // background-color: darkviolet;
+        margin: 1em 1em 4em 1em;
+        // border: solid 1px;
+        padding: 1em;
+        border-top: 1px dotted $font-color;
+        // border-bottom: 1px dotted $font-color;
+        #stackedText {
+          font-family: $logo-font;
+          margin: 0em 0em 0.5em 0em;
+          text-decoration: underline;
+        }
+        .stackedBox {
+          // border: solid 1px;
+          height: 33%;
+          margin-bottom: 10px;
+          .smallTitle {
+            margin: 0em 0em 0em 0em;
+            font-family: $logo-font;
+          }
+          .smallPic {
+            width: 100%;
+            height: 75%;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            border-style: solid;
+            border-width: 5px;
+            border-color: white;
+          }
+          .smallPic:hover {
+            border-color: $body-font-color;
+          }
+          .stackedText {
+            // margin: 1em 1em 4em 1em;
+            margin-bottom: 2px;
+            font-family: $logo-font;
+          }
+        }
+      }
+    }
+  }
+}
