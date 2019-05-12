@@ -818,6 +818,12 @@ input[type='submit']:hover {
     padding: 1em; }
     #inboxContainer .mailBox .timeSent {
       font-size: 10px; }
+    #inboxContainer .mailBox .mailBody .contentLabel {
+      margin: 0em 0em 0.5em 0em; }
+    #inboxContainer .mailBox .mailBody .bodyDiv {
+      border-top: 1px dotted #4ca4db;
+      border-bottom: 1px dotted #4ca4db;
+      padding: 1em; }
     #inboxContainer .mailBox .mailSender {
       display: inline; }
       #inboxContainer .mailBox .mailSender .sentBy {
@@ -831,3 +837,11 @@ input[type='submit']:hover {
 
 #formContainer {
   font-family: "IBM Plex Sans", sans-serif; }
+
+#deleteMessageButton {
+  background-color: #b60404;
+  border-color: #b60404; }
+
+#deleteMessageButton:hover {
+  background-color: white;
+  color: #b60404; }

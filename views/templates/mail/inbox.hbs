@@ -29,11 +29,18 @@
               <div class="senderId">User {{sender_user_id}}</div>
             </p>
           </a>
-          <h4 class="mailBody">Content:
+          <div class="mailBody">
+            <h4 class="contentLabel">Content:
 
-          </h4>
-          <div>{{body}}</div>
+            </h4>
+            <div class="bodyDiv">{{body}}</div>
+          </div>
+
           <p class="timeSent">Sent at: {{created_at}}</p>
+          <form method="POST" action="/inbox/{{id}}?_method=DELETE">
+
+            <input class="deleteButtons" id="deleteMessageButton" type="submit" value="Delete Message">
+          </form>
         </div>
         {{/each}}
         {{else}}

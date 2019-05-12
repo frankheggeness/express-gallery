@@ -20,6 +20,27 @@ router.get('/inbox', mailVerify, (req, res) => {
 router.get('/inbox/sent', mailVerify, (req, res) => {
   res.render('./templates/mail/sentMail');
 });
+
+router.delete('/inbox/:message_id', verify, (req, res) => {
+  new Message({
+    id: req.params.message_id,
+  })
+    .fetch()
+    .then((message) => {
+      let messageObj = message.toJSON();
+      if (req.user.role_id === 1 || req.user.id == messageObj.receiver_user_id) {
+        new Message({
+          id: req.params.message_id,
+        })
+          .destroy()
+          .then(() => {
+            return res.redirect(`/${req.user.id}/inbox`);
+          });
+      } else {
+        return res.render('./templates/error', { messages: `This isn't your inbox!` });
+      }
+    });
+});
 // draft attempt
 
 router.get('/draft', verify, (req, res) => {

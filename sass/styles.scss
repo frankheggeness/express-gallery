@@ -127,6 +127,16 @@ input[type='submit']:hover {
     .timeSent {
       font-size: 10px;
     }
+    .mailBody {
+      .contentLabel {
+        margin: 0em 0em 0.5em 0em;
+      }
+      .bodyDiv {
+        border-top: 1px dotted $body-font-color;
+        border-bottom: 1px dotted $body-font-color;
+        padding: 1em;
+      }
+    }
     .mailSender {
       display: inline;
       .sentBy {
@@ -145,4 +155,13 @@ input[type='submit']:hover {
 
 #formContainer {
   font-family: $logo-font;
+}
+
+#deleteMessageButton {
+  background-color: rgb(182, 4, 4);
+  border-color: rgb(182, 4, 4);
+}
+#deleteMessageButton:hover {
+  background-color: white;
+  color: rgb(182, 4, 4);
 }
