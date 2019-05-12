@@ -17,8 +17,29 @@ router.get('/inbox', mailVerify, (req, res) => {
   res.render('./templates/login');
 });
 
-router.get('/inbox/sent', mailVerify, (req, res) => {
-  res.render('./templates/mail/sentMail');
+// sent mail route
+
+router.get('/inbox/sent', verify, (req, res) => {
+  res.redirect(`/${req.user.id}/inbox/sent`);
+});
+
+router.get('/:user_id/inbox/sent', verify, (req, res) => {
+  if (req.params.user_id == req.user.id || req.user.role_id == 1) {
+    // happy route
+    new Message()
+      .where({ sender_user_id: req.params.user_id })
+      .fetchAll({ withRelated: ['users'] })
+      .then((results) => {
+        let messageObj = results.toJSON();
+        let inboxObj = {
+          mail: results.toJSON(),
+        };
+        // res.send(messageObj);
+        return res.render('./templates/mail/sentMail', inboxObj);
+      });
+  } else {
+    return res.render('./templates/error', { messages: `This isn't your inbox!` });
+  }
 });
 
 router.delete('/inbox/:message_id', verify, (req, res) => {

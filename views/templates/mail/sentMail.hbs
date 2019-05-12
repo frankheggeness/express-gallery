@@ -23,10 +23,10 @@
         {{#each mail}}
         <div class="mailBox">
           <h3 class="mailTitle">{{title}}</h3>
-          <a href="/{{sender_user_id}}">
+          <a href="/{{receiver_user_id}}">
             <p class="mailSender">
-              <h4 class="sentBy">Sent by:</h4>
-              <div class="senderId">User {{sender_user_id}}</div>
+              <h4 class="sentBy">Sent to:</h4>
+              <div class="senderId">User {{receiver_user_id}}</div>
             </p>
           </a>
           <h4 class="mailBody">Content:
@@ -37,7 +37,7 @@
         </div>
         {{/each}}
         {{else}}
-        <h2 id="noMail">You Have No Mail</h2>
+        <h2 id="noMail">You Have No Sent Mail</h2>
         {{/if}}
       </div>
 
@@ -48,6 +48,11 @@
         <form action="/draft" method='GET'>
           <div class="inputClass">
             <input type="submit" value="Send New Message" />
+          </div>
+        </form>
+        <form action="/inbox" method='GET'>
+          <div class="inputClass">
+            <input type="submit" value="To Inbox" />
           </div>
         </form>
       </div>

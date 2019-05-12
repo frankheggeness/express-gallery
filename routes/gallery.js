@@ -127,8 +127,6 @@ router.get('/:gallery_id/edit', verify, (req, res) => {
     .fetch({ withRelated: ['users'] })
     .then((results) => {
       let mainGalleryObj = results.toJSON();
-      // console.log(mainGalleryObj);
-      // console.log(mainGalleryObj.title);
       if (req.user.role_id === 1) {
         return res.render('./templates/gallery/editGal', mainGalleryObj);
       }
