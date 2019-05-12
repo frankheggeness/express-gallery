@@ -7,7 +7,7 @@ const fs = require('fs');
 const session = require('express-session');
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
-// const flash = require('connect-flash');
+const flash = require('connect-flash');
 
 const LocalStrategy = require('passport-local');
 const cookieParser = require('cookie-parser');
@@ -42,6 +42,7 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 app.engine('.hbs', exphbs({ extname: '.hbs' }));
 app.set('view engine', '.hbs');

@@ -24,10 +24,6 @@
       <div class="bigAuthor">Photograph by: {{main.author}}</div>
       <div class="bigTextBody">{{main.description}}</div>
       <div id="editButtonsBox">
-        {{!-- <form method="POST" action="/gallery/{{main.id}}?_method=DELETE">
-
-          <input class="editButtons" id="deleteButton" type="submit" value="Delete">
-        </form> --}}
         <form method="GET" action="/gallery/{{main.id}}/edit">
 
           <input class='editButtons' id="editButton" type="submit" value="Edit">
@@ -40,6 +36,7 @@
 
           <input id="commentButton" type="submit" value="Post new comment">
         </form>
+        {{#if comments}}
         {{#each comments}}
         <div class="commentBox">
           <a href="/{{users.id}}">
@@ -49,11 +46,16 @@
           <p class="commentBody">{{body}}</p>
         </div>
         {{/each}}
+        {{else}}
+        <h4 id="noPics">No comments!</h4>
+        {{/if}}
       </div>
 
     </div>
     <div id="stackedContentContainer">
-      {{!-- <h4 id="stackedText">Your feed</h4> --}}
+      <div id="stackHeadBox">
+        <h4>Newest Posts</h4>
+      </div>
       <div id="stacked1" class="stackedBox">
 
         <a href='http://localhost:3000/gallery/{{stack1.id}}'>

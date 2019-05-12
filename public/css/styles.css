@@ -741,7 +741,15 @@ input[type='reset'] {
   padding: 16px 32px;
   text-decoration: none;
   margin: 4px 2px;
-  cursor: pointer; }
+  border: 2px solid #4ca4db;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s; }
+
+input[type='submit']:hover {
+  background-color: white;
+  color: #4ca4db; }
 
 #commentsContainer {
   font-family: "IBM Plex Sans", sans-serif;
@@ -777,3 +785,14 @@ input[type='reset'] {
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer; }
+
+#noPics {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #4ca4db; }
+
+#stackHeadBox {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #4ca4db;
+  margin: 0em 0em 0em 0em;
+  align-items: center;
+  align-content: center; }

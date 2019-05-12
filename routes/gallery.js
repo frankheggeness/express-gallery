@@ -133,7 +133,7 @@ router.get('/:gallery_id/edit', verify, (req, res) => {
         return res.render('./templates/gallery/editGal', mainGalleryObj);
       }
       if (mainGalleryObj.users.id !== req.user.id) {
-        return res.render('./templates/error');
+        return res.render('./templates/error', { messages: `You can't edit this gallery!` });
       }
       return res.render('./templates/gallery/editGal', mainGalleryObj);
     });

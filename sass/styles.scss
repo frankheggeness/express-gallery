@@ -38,7 +38,14 @@ input[type='reset'] {
   padding: 16px 32px;
   text-decoration: none;
   margin: 4px 2px;
+  border: 2px solid $body-font-color;
   cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+input[type='submit']:hover {
+  background-color: white;
+  color: $body-font-color;
 }
 
 #commentsContainer {
@@ -81,4 +88,17 @@ input[type='reset'] {
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+#noPics {
+  font-family: $logo-font;
+  color: $body-font-color;
+}
+
+#stackHeadBox {
+  font-family: $logo-font;
+  color: $body-font-color;
+  margin: 0em 0em 0em 0em;
+  align-items: center;
+  align-content: center;
 }
