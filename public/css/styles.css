@@ -796,3 +796,38 @@ input[type='submit']:hover {
   margin: 0em 0em 0em 0em;
   align-items: center;
   align-content: center; }
+
+#noMail {
+  position: absolute;
+  top: 50;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin: 0.5em 0.5em 0.5em 0.5em; }
+
+#inboxContainer {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "IBM Plex Sans", sans-serif;
+  width: 100%;
+  height: auto;
+  margin: 0em 0em 0em 0em;
+  vertical-align: top; }
+  #inboxContainer .mailBox {
+    width: 100%;
+    border: 1px dotted #4ca4db;
+    margin: 0.5em 0.5em 0.5em 0.5em;
+    padding: 1em; }
+    #inboxContainer .mailBox .timeSent {
+      font-size: 10px; }
+    #inboxContainer .mailBox .mailSender {
+      display: inline; }
+      #inboxContainer .mailBox .mailSender .sentBy {
+        width: 40%;
+        font-weight: 800; }
+      #inboxContainer .mailBox .mailSender .senderId {
+        width: 60%; }
+
+.contactHead {
+  font-family: "IBM Plex Sans", sans-serif; }
+
+#formContainer {
+  font-family: "IBM Plex Sans", sans-serif; }

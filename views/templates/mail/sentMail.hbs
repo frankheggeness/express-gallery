@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spotchek</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  {{>fonts}}
+</head>
+
+<body>
+  {{>header}}
+
+  <div id="formContainer">
+    <div id="leftBox">
+
+      <div id="inboxContainer">
+
+        {{#if mail}}
+        <h2 id="inboxHeader">Your Sent Mail:</h2>
+        {{#each mail}}
+        <div class="mailBox">
+          <h3 class="mailTitle">{{title}}</h3>
+          <a href="/{{sender_user_id}}">
+            <p class="mailSender">
+              <h4 class="sentBy">Sent by:</h4>
+              <div class="senderId">User {{sender_user_id}}</div>
+            </p>
+          </a>
+          <h4 class="mailBody">Content:
+
+          </h4>
+          <div>{{body}}</div>
+          <p class="timeSent">Sent at: {{created_at}}</p>
+        </div>
+        {{/each}}
+        {{else}}
+        <h2 id="noMail">You Have No Mail</h2>
+        {{/if}}
+      </div>
+
+    </div>
+    <div id="formBox">
+
+      <div id="registerBox">
+        <form action="/draft" method='GET'>
+          <div class="inputClass">
+            <input type="submit" value="Send New Message" />
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>

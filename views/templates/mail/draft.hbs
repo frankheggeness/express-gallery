@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spotchek</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  {{>fonts}}
+</head>
+
+<body>
+  {{>header}}
+  <div id="formContainer">
+    <div id="leftBox">
+      <form action="/draft" method="post">
+        <div class="inputClass">
+          <label>ID of recipient:</label>
+          <input type="text" name="receiver_user_id" />
+        </div>
+        <div class="inputClass">
+          <label>Message Title:</label>
+          <input type="text" name="title" />
+        </div>
+        <div class="inputClass">
+          <label>Message Body:</label>
+          <input type="text" name="body" />
+        </div>
+        <div class="inputClass">
+          <input type="submit" value="Send Message" />
+        </div>
+      </form>
+
+    </div>
+    <div id="formBox">
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>

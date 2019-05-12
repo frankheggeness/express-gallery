@@ -6,10 +6,46 @@ const passport = require('passport');
 const User = require('../database/models/User');
 const Gallery = require('../database/models/Gallery');
 const profileVerify = require('../middleware/profileVerify');
+const Message = require('../database/models/Message');
+const mailVerify = require('../middleware/mailVerify');
 
 router.get('/login', profileVerify, (req, res) => {
   res.render('./templates/login');
 });
+
+router.get('/inbox', mailVerify, (req, res) => {
+  res.render('./templates/login');
+});
+
+router.get('/inbox/sent', mailVerify, (req, res) => {
+  res.render('./templates/mail/sentMail');
+});
+// draft attempt
+
+router.get('/draft', verify, (req, res) => {
+  return res.render('./templates/mail/draft');
+});
+
+router.get('/contact', verify, (req, res) => {
+  return res.render('./templates/contact');
+});
+
+// send message
+
+router.post('/draft', verify, (req, res) => {
+  new Message({
+    title: req.body.title,
+    body: req.body.body,
+    sender_user_id: req.user.id,
+    receiver_user_id: req.body.receiver_user_id,
+  })
+    .save()
+    .then(() => {
+      return res.redirect(`/${req.user.id}/inbox`);
+    });
+});
+
+// user page
 
 router.get('/:user_id', verify, (req, res) => {
   new User()
@@ -21,9 +57,6 @@ router.get('/:user_id', verify, (req, res) => {
         .where({ user_id: req.params.user_id })
         .fetchAll()
         .then((galleries) => {
-          // console.log('F#@%@%#%^@$^@');
-          // console.log(galleries.toJSON());
-
           let userPageObj = {
             user: userObj,
             pictures: galleries.toJSON(),
@@ -36,7 +69,6 @@ router.get('/:user_id', verify, (req, res) => {
 
 router.get('/', (req, res) => {
   new Gallery().fetchAll().then((results) => {
-    // console.log(results.toJSON());
     let lastResult = results.pop().toJSON();
     let stack1 = results.pop().toJSON();
     let stack2 = results.pop().toJSON();
@@ -53,7 +85,6 @@ router.get('/', (req, res) => {
 
 router.get('/:user_id', verify, (req, res) => {
   new Gallery().fetchAll().then((results) => {
-    // console.log(results.toJSON());
     let lastResult = results.pop().toJSON();
     let stack1 = results.pop().toJSON();
     let stack2 = results.pop().toJSON();
@@ -66,6 +97,26 @@ router.get('/:user_id', verify, (req, res) => {
     };
     return res.render('./templates/main', gallery);
   });
+});
+
+// inbox attempt
+router.get('/:user_id/inbox', verify, (req, res) => {
+  if (req.params.user_id == req.user.id || req.user.role_id == 1) {
+    // happy route
+    new Message()
+      .where({ receiver_user_id: req.params.user_id })
+      .fetchAll({ withRelated: ['users'] })
+      .then((results) => {
+        let messageObj = results.toJSON();
+        let inboxObj = {
+          mail: results.toJSON(),
+        };
+        // res.send(messageObj);
+        return res.render('./templates/mail/inbox', inboxObj);
+      });
+  } else {
+    return res.render('./templates/error', { messages: `This isn't your inbox!` });
+  }
 });
 
 router.post('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }));

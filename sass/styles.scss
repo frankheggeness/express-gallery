@@ -102,3 +102,47 @@ input[type='submit']:hover {
   align-items: center;
   align-content: center;
 }
+
+// mail
+#noMail {
+  position: absolute;
+  top: 50;
+  font-family: $logo-font;
+  margin: 0.5em 0.5em 0.5em 0.5em;
+}
+
+#inboxContainer {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: $logo-font;
+  width: 100%;
+  height: auto;
+  margin: 0em 0em 0em 0em;
+  vertical-align: top;
+  .mailBox {
+    width: 100%;
+    border: 1px dotted $body-font-color;
+    margin: 0.5em 0.5em 0.5em 0.5em;
+    padding: 1em;
+    .timeSent {
+      font-size: 10px;
+    }
+    .mailSender {
+      display: inline;
+      .sentBy {
+        width: 40%;
+        font-weight: 800;
+      }
+      .senderId {
+        width: 60%;
+      }
+    }
+  }
+}
+.contactHead {
+  font-family: $logo-font;
+}
+
+#formContainer {
+  font-family: $logo-font;
+}

@@ -92,6 +92,32 @@ exports.seed = function(knex, Promise) {
             'https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2018/09/26111353/GregEwing_Azores_Tripwire_Surfline_009.jpg',
           author: 'Greg Ewing',
         },
+        {
+          user_id: 6,
+          title: 'South African Bomb',
+          description:
+            'It’s always a gamble — the hope and mental energy one puts into the swell of the year. Do you stay put and chase big waves with the possibility of it being too wild to paddle? Do you drive up to potentially perfect points up country despite the strange winds? Or do you buy a plane ticket and fly over to a nearby island to finally get that new wave you’ve been planning on getting?',
+          photo_url:
+            'https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2018/09/24102458/Sunset_AlanvanGysen-00991.jpg',
+          author: 'Greg Ewing',
+        },
+        {
+          user_id: 6,
+          title: 'Dream from the Hilltop',
+          description:
+            'The first waves of the morning were big, and we knew the swell was on the rise,” Levine said. “By noon, it was huge and glassy — and only one guy fell and had to be rescued. The lips were thick enough that none of us were trying to get super deep this far away from civilization. There is no Coast Guard. There is no hospital. There are no lifeguards. There is nobody to call. We have radios that’ll be answered at the resort, or our other boats. Nobody else will answer a Mayday call.”',
+          photo_url:
+            'https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2018/09/24101334/swell-22nd-Sept_Ian-Thurtell7.jpg',
+          author: 'Greg Ewing',
+        },
+        {
+          user_id: 6,
+          title: 'Bawa Maxing Out',
+          description:
+            'One of the best views in Cape Town atop Signal Hill, where every day at 12:00 the noon day canon still fires to signal midday. When the swell is big, the suburb of Sea Point looks like a giant left point alongside the city’s giant stadium.',
+          photo_url: 'https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2018/08/03135106/MARCELO.jpg',
+          author: 'Greg Ewing',
+        },
       ]);
     });
 };
