@@ -114,7 +114,7 @@ exports.seed = function(knex, Promise) {
           user_id: 6,
           title: 'Bawa Maxing Out',
           description:
-            'One of the best views in Cape Town atop Signal Hill, where every day at 12:00 the noon day canon still fires to signal midday. When the swell is big, the suburb of Sea Point looks like a giant left point alongside the city’s giant stadium.',
+            'Indonesia was absolutely cranking on this historic swell which sent Hawaiian-sized lines toward spots like Bawa.',
           photo_url: 'https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2018/08/03135106/MARCELO.jpg',
           author: 'Greg Ewing',
         },

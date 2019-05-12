@@ -147,6 +147,9 @@ router.get('/:user_id/inbox', verify, (req, res) => {
     // happy route
     new Message()
       .where({ receiver_user_id: req.params.user_id })
+      .query((qb) => {
+        qb.orderBy('id', 'DESC');
+      })
       .fetchAll({ withRelated: ['users'] })
       .then((results) => {
         let messageObj = results.toJSON();

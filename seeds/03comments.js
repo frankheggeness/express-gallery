@@ -28,6 +28,9 @@ exports.seed = function(knex, Promise) {
         { user_id: 3, gallery_id: 10, body: 'i like surf um' },
         { user_id: 2, gallery_id: 9, body: 'mentalll' },
         { user_id: 6, gallery_id: 10, body: 'ho das mean' },
+        { user_id: 5, gallery_id: 13, body: 'brah dat guy look like one ant next to dat wave' },
+        { user_id: 4, gallery_id: 11, body: 'that wave is nasty cuz' },
+        { user_id: 3, gallery_id: 12, body: 'supa dreamy out there' },
       ]);
     });
 };
